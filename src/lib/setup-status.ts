@@ -207,3 +207,64 @@ export function getProgress(groups: StatusGroup[]): { done: number; total: numbe
     total: required.length,
   };
 }
+
+export interface DeployStep {
+  no: number;
+  title: string;
+  body: string;
+  commands?: string[];
+  /** 대시보드에서 상태를 판단할 수 있는 단계만 값이 있습니다 */
+  done?: boolean;
+}
+
+/**
+ * Cloudflare Pages 배포 절차.
+ * 문서(DEPLOY.md)를 열지 않아도 /setup 에서 순서를 확인할 수 있게 합니다.
+ */
+export function getDeploySteps(): DeployStep[] {
+  const urlOk =
+    siteConfig.url !== "https://example.com" && siteConfig.url.startsWith("https://");
+
+  return [
+    {
+      no: 1,
+      title: "도메인 구입",
+      body: "Cloudflare Registrar가 원가 판매라 가장 저렴하고, 같은 계정이라 연결이 자동입니다. 가비아·후이즈도 가능합니다. .com 기준 연 1~2만원. *.pages.dev 서브도메인으로는 애드센스 승인이 어렵습니다.",
+    },
+    {
+      no: 2,
+      title: "site.config.ts의 url 교체",
+      body: "구입한 도메인으로 바꾸지 않으면 sitemap·canonical·OG가 전부 example.com을 가리켜 검색에 잡히지 않습니다.",
+      done: urlOk,
+    },
+    {
+      no: 3,
+      title: "GitHub 저장소에 올리기",
+      body: "github.com에서 새 저장소를 만든 뒤(README 추가 없이 빈 저장소로), 아래 명령으로 올립니다. 로컬 커밋은 이미 되어 있습니다.",
+      commands: [
+        "git remote add origin https://github.com/사용자명/저장소명.git",
+        "git push -u origin main",
+      ],
+    },
+    {
+      no: 4,
+      title: "Cloudflare Pages 연결",
+      body: "dash.cloudflare.com → Workers & Pages → Create → Pages → Connect to Git → 저장소 선택. 빌드 설정은 Framework preset을 None으로 두고, Build command는 npm run build, Build output directory는 out 으로 입력합니다. (Next.js 프리셋을 고르면 설정이 달라져 실패합니다)",
+    },
+    {
+      no: 5,
+      title: "도메인 연결",
+      body: "Pages 프로젝트 → Custom domains → Set up a domain. Cloudflare에서 구입했다면 자동 연결되고, 다른 곳에서 샀다면 안내대로 네임서버를 변경합니다. SSL 인증서는 자동 발급됩니다.",
+    },
+    {
+      no: 6,
+      title: "배포 확인",
+      body: "도메인/sitemap.xml 에 실제 도메인이 들어가 있는지, 도메인/robots.txt 의 Sitemap 줄이 맞는지 확인합니다. example.com이 보이면 2번을 안 한 것입니다.",
+    },
+    {
+      no: 7,
+      title: "자동 배포 확인",
+      body: "이후에는 git push 할 때마다 Cloudflare가 자동으로 빌드·배포합니다. GitHub Actions가 매일 커밋하는 초안은 draft:true라 사이트에 노출되지 않습니다.",
+    },
+  ];
+}

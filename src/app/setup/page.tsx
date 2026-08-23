@@ -4,6 +4,7 @@ import {
   getSetupStatus,
   getContentStats,
   getProgress,
+  getDeploySteps,
   type StatusLevel,
 } from "@/lib/setup-status";
 import { siteConfig } from "../../../site.config";
@@ -43,6 +44,7 @@ export default function SetupPage() {
   const groups = getSetupStatus();
   const stats = getContentStats();
   const progress = getProgress(groups);
+  const deploySteps = getDeploySteps();
   const pct = Math.round((progress.done / progress.total) * 100);
 
   return (
@@ -166,6 +168,64 @@ export default function SetupPage() {
               맞춥니다.
             </li>
           </ol>
+        </div>
+      </section>
+
+      {/* 배포 절차 */}
+      <section className="setup__section">
+        <h2>배포 절차 (Cloudflare Pages)</h2>
+        <p className="setup__section-desc">
+          순서대로 따라가면 됩니다. 로컬 커밋은 이미 되어 있습니다.
+        </p>
+
+        <ol className="deploy-steps">
+          {deploySteps.map((s) => (
+            <li
+              key={s.no}
+              className={`deploy-step${s.done === true ? " is-done" : ""}${
+                s.done === false ? " is-todo" : ""
+              }`}
+            >
+              <span className="deploy-step__no" aria-hidden="true">
+                {s.done === true ? "✓" : s.no}
+              </span>
+              <div className="deploy-step__body">
+                <h3>{s.title}</h3>
+                <p>{s.body}</p>
+                {s.commands && (
+                  <pre className="deploy-step__cmd">
+                    {s.commands.join("\n")}
+                  </pre>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <div className="setup__note">
+          <strong>Cloudflare 대시보드 빌드 설정</strong>
+          <table className="setup__cmds" style={{ marginTop: 10 }}>
+            <tbody>
+              <tr>
+                <td>Framework preset</td>
+                <td>
+                  <code>None</code> — Next.js 프리셋을 고르면 실패합니다
+                </td>
+              </tr>
+              <tr>
+                <td>Build command</td>
+                <td>
+                  <code>npm run build</code>
+                </td>
+              </tr>
+              <tr>
+                <td>Build output directory</td>
+                <td>
+                  <code>out</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 

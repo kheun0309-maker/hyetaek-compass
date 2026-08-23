@@ -1,11 +1,10 @@
 import type { NextConfig } from "next";
 
 /**
- * BUILD_TARGET=static 이면 완전 정적 HTML로 내보냅니다(out/ 폴더).
- * → Cloudflare Pages, Netlify, S3, 일반 웹호스팅 어디든 올릴 수 있습니다.
- * 값이 없으면 기본 Next.js 빌드(Vercel용)로 동작합니다.
+ * 기본값은 완전 정적 내보내기(out/ 폴더)입니다 — Cloudflare Pages 배포용.
+ * 서버 기능이 필요해지면 BUILD_TARGET=server 로 빌드하세요.
  */
-const isStaticExport = process.env.BUILD_TARGET === "static";
+const isStaticExport = process.env.BUILD_TARGET !== "server";
 
 const nextConfig: NextConfig = {
   // 정적 생성 우선. 모든 글 페이지는 빌드 시 HTML로 구워집니다.

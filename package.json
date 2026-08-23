@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run index && next build",
-    "start": "next start",
     "lint": "next lint",
     "index": "tsx scripts/build-search-index.ts",
     "generate": "tsx scripts/generate.ts",
@@ -15,9 +14,9 @@
     "pipeline": "tsx scripts/pipeline.ts",
     "discover": "tsx scripts/discover.ts",
     "review": "tsx scripts/review.ts",
-    "build:static": "npm run index && node scripts/build-static.mjs",
-    "deploy": "npm run build:static && wrangler pages deploy out",
-    "preview:static": "npm run build:static && wrangler pages dev out",
+    "build:static": "npm run build",
+    "deploy": "npm run build && node scripts/deploy.mjs",
+    "preview:static": "npm run build && wrangler pages dev out",
     "doctor": "tsx scripts/doctor.ts"
   },
   "dependencies": {
