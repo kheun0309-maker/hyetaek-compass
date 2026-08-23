@@ -1,0 +1,45 @@
+# 자동 발굴의 앵커가 되는 대표 주제 영역입니다.
+# 형식: 카테고리slug|주제
+# 줄을 추가하면 발굴 범위가 넓어집니다.
+
+subsidy|청년 대상 정부지원금
+subsidy|소상공인 지원금
+subsidy|직업훈련 및 국민내일배움카드
+subsidy|출산·양육 지원금
+subsidy|에너지바우처 및 공공요금 감면
+subsidy|지자체 청년수당
+
+welfare|기초연금
+welfare|아동수당 및 부모급여
+welfare|기초생활수급 및 차상위계층
+welfare|장애인 복지 혜택
+welfare|한부모가족 지원
+welfare|노인 돌봄 서비스
+
+housing|청년월세 특별지원
+housing|전세자금대출 및 보증
+housing|행복주택·매입임대 등 공공임대
+housing|주거급여
+housing|신혼부부 주택 지원
+housing|전세사기 예방 및 피해 지원
+
+health|국가건강검진
+health|본인부담상한제 및 의료비 환급
+health|산정특례 제도
+health|암 검진 및 지원
+health|정신건강 및 심리 상담 지원
+health|영유아 건강검진 및 예방접종
+
+tax|연말정산
+tax|근로장려금·자녀장려금
+tax|종합소득세 신고
+tax|자동차세 및 지방세 감면
+tax|미환급금 찾기
+tax|주택 관련 세금 감면
+
+admin|정부24 증명서 발급
+admin|주민등록 관련 민원
+admin|여권 및 신분증 발급
+admin|자동차 관련 민원
+admin|가족관계등록 서류
+admin|온라인 신고 및 신청 절차
