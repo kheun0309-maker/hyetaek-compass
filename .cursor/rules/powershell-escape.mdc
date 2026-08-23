@@ -1,0 +1,43 @@
+---
+description: PowerShell에서 npm/git 명령의 $, &&, 작은따옴표가 깨질 때 — Windows 터미널 작업 시 참조
+alwaysApply: false
+---
+
+# PowerShell 이스케이프
+
+이 환경의 기본 셸은 PowerShell이다. bash 문법을 그대로 넣으면 명령이 깨진다.
+
+## 규칙
+
+| bash 습관 | PowerShell |
+|---|---|
+| `cmd1 && cmd2` | `cmd1; cmd2` |
+| `$HOME`, `$env:FOO` 를 큰따옴표 안에서 보호 | 변수를 안 쓰려면 **작은따옴표** `'...'` |
+| heredoc `$(cat <<'EOF'` | 여기서는 사용하지 않는다. 파일로 쓰거나 한 줄 `-m` |
+
+`$$`, `$변수`, `$( )`는 PowerShell이 먼저 해석한다. npm 스크립트 인자나 git 메시지에 `$`가 있으면 작은따옴표로 감싼다.
+
+```powershell
+# 가능
+npm run generate -- --keyword '연말정산 $공제'
+git commit -m 'fix: $env 오탐 안내 문구'
+
+# 위험 (PowerShell이 $를 확장)
+npm run generate -- --keyword "연말정산 $공제"
+```
+
+여러 줄 메시지는 here-string:
+
+```powershell
+git commit -m @"
+Add keyword pipeline guard.
+
+Clamp --limit to automation.config.ts max.
+"@
+```
+
+## 변경 이력
+
+| 날짜 | 변경 내용 | 관련 파일 |
+|---|---|---|
+| 2026-08-23 | disclosure_system PowerShell 룰을 npm/git 작업 중심으로 축소 도입 | `.cursor/rules/powershell-escape.mdc` |

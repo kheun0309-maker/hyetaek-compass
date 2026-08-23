@@ -1,0 +1,54 @@
+---
+description: UI 디자인 철학 — 절제된 정보 계층, CSS 토큰, 과한 장식 금지
+alwaysApply: true
+---
+
+# UI 디자인 철학: 절제된 정보 계층
+
+화려함보다 명확함. 그라데이션·강한 그림·과한 애니메이션 대신 **여백·타이포그래피·얇은 구분선**으로 위계를 표현한다.
+
+이 사이트는 공개 정보 블로그이므로, 본문 컬럼은 `globals.css`의 `--article`(약 760px) 폭으로 읽기 편하게 제한한다. 관리 화면처럼 좌측 붙임 레이아웃을 강제하지 않는다.
+
+## 1. 색은 토큰
+
+구조 색은 `src/app/globals.css` `:root`만 사용한다. 다크 모드는 같은 변수명으로 덮인다.
+
+| 용도 | 변수 |
+|---|---|
+| 페이지 배경 | `--bg`, `--bg-soft`, `--bg-elev` |
+| 테두리 | `--border`, `--border-strong` |
+| 텍스트 | `--text`, `--text-soft`, `--text-mute` |
+| 강조 | `--brand`, `--brand-soft` |
+| 경고 박스 | `--warn-bg`, `--warn-border` |
+| 반경·그림자·폭 | `--radius`, `--radius-sm`, `--shadow-lg`, `--wrap`, `--article` |
+
+**금지:** 레이아웃에 `#1758d6` 같은 hex 하드코딩.
+
+상태 의미(성공/오류)처럼 테마와 무관해야 하는 색만 시맨틱 고정값을 쓴다.
+
+## 2. 장식 제한
+
+- **그라데이션:** 배경·헤더·버튼에 `linear-gradient` 금지. 진행 바만 예외.
+- **그림자:** 카드는 `border`로 구분. `box-shadow`는 드롭다운·모달 등 부유 요소만.
+- **hover:** 카드는 `border-color` 또는 `translateY(-1px)` 이하. `-2px` 이상·hover 그림자 금지.
+
+## 3. 강조 순서
+
+1. 타이포 (굵기·크기)
+2. 배경 대비 (`--bg-soft` vs `--bg-elev`)
+3. `--brand` 텍스트
+4. 아이콘 (장식용 남발 금지)
+
+상단 컬러 바, 아이콘을 원형 색 박스에 넣는 패턴은 쓰지 않는다.
+
+## 4. 레이아웃
+
+- 사이트 셸: `--wrap` (1120px) 가운데 정렬
+- 글 본문: `--article` 폭, `word-break: keep-all`
+- 같은 영역에 여백+구분선+배경+border를 겹쌓지 않는다
+
+## 변경 이력
+
+| 날짜 | 변경 내용 | 관련 파일 |
+|---|---|---|
+| 2026-08-23 | disclosure_system UI 철학을 이 사이트 토큰(`globals.css`)·블로그 레이아웃에 맞게 도입 | `.cursor/rules/ui-design-philosophy.mdc` |

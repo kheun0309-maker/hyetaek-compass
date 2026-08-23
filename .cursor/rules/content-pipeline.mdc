@@ -1,0 +1,55 @@
+---
+description: 콘텐츠 파이프라인 — 키워드 발굴, 글 생성, 프롬프트, AI 프로바이더, draft/발행 작업 시 반드시 참조
+alwaysApply: false
+---
+
+# 콘텐츠 파이프라인
+
+글 생성·키워드·프롬프트·프로바이더를 다룰 때 이 룰을 따른다.
+
+## 1. 데이터 흐름
+
+```
+data/seeds.txt ─┐
+content/posts ──┼─▶ discover.ts ─▶ data/keywords.csv (status="")
+                └─▶ generate.ts ─▶ content/posts/<slug>.md
+                                      draft: true / reviewed: false
+                                            │
+                                     사람 검토 (건너뛰면 검색 제재 위험)
+                                            │
+                                     npm run review -- --publish <slug>
+                                            │
+                          npm run index / sitemap / src/app/[slug]/page.tsx
+```
+
+## 2. 단일 책임
+
+| 규칙 | 이유 |
+|---|---|
+| 프롬프트는 `scripts/lib/prompts.ts`만 수정 | 흩으면 문체·품질을 통제할 수 없음 |
+| 프로바이더 추가는 `scripts/lib/providers/` + `index.ts` 팩토리 | 호출부가 모델 SDK에 직접 의존하지 않게 |
+| 발행량 램프는 `automation.config.ts` | 화면에 숫자를 박지 않음 |
+| 파일명 = kebab-case 슬러그 | URL과 1:1. 발행 후 변경 시 색인 단절 |
+
+## 3. 초안과 발행
+
+- `draft: true` 글은 `src/lib/posts.ts`의 `getAllPosts()`가 프로덕션에서 제외한다.
+- `reviewed: false`인 초안을 자동 발행하지 않는다. `npm run review -- --publish <slug>`가 사람 검토 단계다.
+- `npm run pipeline -- --dry`로 계획만 볼 수 있다. 불필요한 API 호출을 하지 않는다.
+
+## 4. 비밀값
+
+- 키는 `.env`. 프롬프트·커밋·룰에 키를 적지 않는다.
+- `--provider anthropic|openai|grok` 또는 `AI_PROVIDER`로만 모델을 고른다.
+
+## 체크리스트
+
+- [ ] 프롬프트 변경이 `prompts.ts` 한곳인가?
+- [ ] 새 글 슬러그가 기존 URL과 충돌하지 않는가?
+- [ ] 초안이 사이트맵/검색 인덱스에 실리지 않는가?
+
+## 변경 이력
+
+| 날짜 | 변경 내용 | 관련 파일 |
+|---|---|---|
+| 2026-08-23 | PROJECT-MAP 파이프라인 규칙을 개발방법론 룰로 고정 | `.cursor/rules/content-pipeline.mdc` |

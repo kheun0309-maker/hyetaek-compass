@@ -1,0 +1,156 @@
+---
+description: 사용자가 "전문 에이전트 방식으로 개발해줘" 또는 "멀티 에이전트로 개발" 요청 시 적용하는 개발 워크플로우
+alwaysApply: false
+---
+
+# 전문 에이전트 개발 워크플로우
+
+## 적용 조건
+
+사용자가 다음과 같이 요청할 때 이 워크플로우를 적용한다:
+
+- "전문 에이전트 방식으로 개발해줘"
+- "멀티 에이전트로 개발해줘"
+- "에이전트 방식으로 진행해줘"
+- "개발방법론으로 개발해줘"
+
+DB/백엔드가 없는 사이트이므로, 데이터 모델이 바뀌지 않으면 **1단계를 생략**하고 2단계부터 시작한다.
+
+## 4단계 워크플로우
+
+### 1단계: 설계 (순차, 필요 시만)
+
+프론트매터·카테고리·설정 스키마가 바뀔 때만 실행한다.
+
+| 항목 | 내용 |
+|---|---|
+| 에이전트 타입 | `generalPurpose` |
+| 역할 | 타입, 설정 키, 콘텐츠 스키마 확정 |
+| 산출물 | `src/lib/types.ts`, `site.config.ts` 카테고리/설정, 필요 시 CSV 컬럼 정의 |
+
+**전달 컨텍스트:**
+
+```
+프로젝트: Next.js 정적 사이트 + scripts/ 콘텐츠 파이프라인
+기존 타입: src/lib/types.ts (PostFrontmatter, Post, SearchDoc)
+기존 설정: site.config.ts, automation.config.ts
+규칙:
+- 카테고리 추가는 CategorySlug 유니온과 site.config.ts categories를 함께 수정
+- 글 스키마는 프론트매터 필드로만 확장 (임의 본문 메타 금지)
+- 비밀값은 .env, 공개 설정은 site.config.ts
+```
+
+**완료 조건:** 타입·설정 변경이 파일로 저장됨. 스키마 변경이 없으면 이 단계를 건너뛴다.
+
+### 2단계: 구현 (병렬)
+
+설계 결과를 바탕으로 **UI 에이전트 + 파이프라인 에이전트**를 필요한 만큼 병렬 실행한다. 해당 없는 쪽은 생략한다.
+
+#### UI 에이전트
+
+| 항목 | 내용 |
+|---|---|
+| 에이전트 타입 | `generalPurpose` |
+| 역할 | App Router 페이지, 컴포넌트, `src/lib` 런타임 |
+| 산출물 | `src/app/**`, `src/components/**`, `src/lib/**` |
+
+**전달 컨텍스트:**
+
+```
+기존 패턴: PROJECT-MAP.md, src/app/, src/components/
+규칙:
+- App Router. 새 목록 페이지는 page.tsx + 필요 시 page/[page]/page.tsx
+- 설정은 site.config.ts에서만 읽는다
+- 스타일: src/app/globals.css 토큰 (var(--brand) 등), 하드코딩 색상 금지
+- 글 조회: src/lib/posts.ts 의 getAllPosts(). draft:true 는 프로덕션에서 제외
+- 검색: src/lib/search-client.ts + hangul.ts
+- SEO: src/lib/seo.ts, sitemap.ts, robots.ts
+```
+
+#### 파이프라인 에이전트
+
+| 항목 | 내용 |
+|---|---|
+| 에이전트 타입 | `generalPurpose` |
+| 역할 | 발굴·생성·검토·인덱스 스크립트 |
+| 산출물 | `scripts/**` |
+
+**전달 컨텍스트:**
+
+```
+오케스트레이터: scripts/pipeline.ts
+규칙:
+- 프롬프트는 scripts/lib/prompts.ts 한 곳만 수정
+- 프로바이더는 scripts/lib/providers/ 추상화 (index.ts 팩토리)
+- 키워드 재고: data/keywords.csv, 시드: data/seeds.txt
+- CLI 파서: scripts/lib/cli.ts
+- 글 파일명 = kebab-case 슬러그. 발행 후 슬러그 변경 금지
+- 프로바이더: --provider anthropic|openai|grok 또는 AI_PROVIDER
+```
+
+**완료 조건:** 요청 범위의 UI 및/또는 스크립트가 구현됨.
+
+### 3단계: 코드 리뷰 (순차)
+
+| 항목 | 내용 |
+|---|---|
+| 에이전트 타입 | `generalPurpose` (읽기 전용) |
+| 역할 | SEO·보안·프로젝트 규칙 준수 검토 |
+| 산출물 | 문제점 목록 + 수정 제안 |
+
+**리뷰 체크리스트:**
+
+```
+[보안]
+- 클라이언트 번들에 API 키가 실리지 않았는가?
+- /setup 이 noindex 인가?
+- .env 값이 커밋 대상이 아닌가?
+
+[SEO·콘텐츠]
+- 슬러그가 kebab-case 이고 기존 URL을 깨지 않는가?
+- draft:true 글이 프로덕션 목록/사이트맵에 안 나가는가?
+- 프롬프트 변경이 prompts.ts 밖에도 흩어지지 않았는가?
+
+[프론트엔드]
+- CSS 변수만 사용했는가?
+- 미사용 import가 없는가?
+- 광고 밀도 설정이 site.config.ts ads 주석 범위를 넘지 않는가?
+
+[파이프라인]
+- 한 건 실패가 전체 중단으로 이어지지 않는가?
+- doctor/CLI 도움말이 새 파라미터를 반영하는가?
+```
+
+### 4단계: 수정 반영 (오케스트레이터)
+
+메인 AI가 리뷰를 직접 반영한다.
+
+- 발견된 문제를 순차 수정
+- `ReadLints` / 필요 시 `npx tsc --noEmit`
+- UI면 `npm run dev`로 해당 라우트 확인
+- 커밋·배포는 하지 않는다 (`no-direct-deploy.mdc`)
+- 변경 요약을 사용자에게 보고
+
+## 제약
+
+- 동시 실행 에이전트는 **최대 4개**
+- 의존성이 있으면 순차 (설계 → 구현 → 리뷰)
+- 에이전트는 서로를 볼 수 없으므로 경로·설계 결과·규칙을 프롬프트에 **명시**
+
+## 실행 예시
+
+```
+[사용자] "태그 페이지 필터를 전문 에이전트 방식으로 개발해줘"
+
+→ 1단계 생략 (스키마 불변)
+→ 2단계: Task(UI) 만 실행
+→ 3단계: Task(코드리뷰, readonly)
+→ 4단계: 오케스트레이터가 리뷰 반영 + 브라우저 확인
+→ 완료 보고 (배포는 사용자)
+```
+
+## 변경 이력
+
+| 날짜 | 변경 내용 | 관련 파일 |
+|---|---|---|
+| 2026-08-23 | disclosure_system 4단계 워크플로를 Next.js+파이프라인 구조에 맞게 도입 | `.cursor/rules/multi-agent-workflow.mdc` |

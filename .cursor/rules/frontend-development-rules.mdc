@@ -1,0 +1,72 @@
+---
+description: 프론트엔드 개발 규칙 — Next.js App Router, 컴포넌트, SEO, 검색, 설정 읽기 시 적용
+alwaysApply: true
+---
+
+# 프론트엔드 개발 규칙
+
+파일 위치는 `PROJECT-MAP.md`를 우선 본다. 이 룰은 구현 시 지켜야 할 제약이다.
+
+## 1. 라우트
+
+Next.js App Router. 새 목록이 페이지네이션되면 목록 `page.tsx`와 `page/[page]/page.tsx`를 함께 둔다.
+
+| 하고 싶은 일 | 파일 |
+|---|---|
+| 홈 | `src/app/page.tsx` |
+| 글 상세·본문 광고 삽입 | `src/app/[slug]/page.tsx` |
+| 카테고리 | `src/app/category/[slug]/` |
+| 검색 | `src/app/search/` |
+| 설정 대시보드 (noindex) | `src/app/setup/` |
+| 사이트맵/robots/RSS/ads.txt | `src/app/sitemap.ts`, `robots.ts`, `rss.xml/route.ts`, `ads.txt/route.ts` |
+
+- `/setup`은 운영자용이므로 인덱싱되지 않아야 한다.
+- 정적 내보내기(`output: "export"`)가 기본이다. Route Handler의 동적 서버 기능에 의존하지 않는다.
+
+## 2. 설정은 한곳
+
+컴포넌트에 도메인·광고 ID·카테고리명을 하드코딩하지 않는다. `site.config.ts`만 읽는다.
+
+- 광고 개수·위치를 늘리기 전에 `site.config.ts`의 `ads` 주석(과밀 금지)을 확인한다.
+- 제휴 링크는 `Affiliate` + `siteConfig.affiliate.disclosure` 문구를 유지한다.
+
+## 3. 콘텐츠 조회
+
+- 글 목록/상세: `src/lib/posts.ts`의 `getAllPosts()`. `draft: true`는 프로덕션에서 제외.
+- 마크다운→HTML·목차·광고 분할: `src/lib/markdown.ts`
+- 슬러그는 **영문 kebab-case**. 파일명 = URL. 한 번 발행한 슬러그는 바꾸지 않는다 (색인 단절).
+
+## 4. 스타일
+
+- 토큰: `src/app/globals.css` `:root` (`--bg`, `--brand`, `--text-soft` 등)
+- 레이아웃 색을 hex로 직접 쓰지 않는다. 시맨틱 의미(성공/경고)만 예외.
+- 인라인 `style={{ color: "#..." }}` 금지. 간격·반경도 토큰을 우선한다.
+
+## 5. 검색·SEO
+
+- 클라이언트 검색: `src/lib/search-client.ts`, 초성: `src/lib/hangul.ts`
+- 메타/JSON-LD: `src/lib/seo.ts`
+- 글 추가·슬러그 체계가 바뀌면 `sitemap.ts`·검색 인덱스(`scripts/build-search-index.ts`) 영향을 확인한다.
+
+## 6. 컴포넌트 경계
+
+| 파일 | 역할 |
+|---|---|
+| `AdSlot.tsx` | 지연 로딩·CLS 방지. 슬롯 ID는 config에서 |
+| `StickyAnchorAd.tsx` | 모바일 하단 앵커 |
+| `SearchBox.tsx` | 헤더/페이지 겸용 |
+| `Header.tsx` / `Footer.tsx` | 메뉴·링크 |
+| `src/lib/*` | 데이터·변환. 페이지에 파싱 로직을 쌓지 않는다 |
+
+## 체크리스트 (신규 화면)
+
+- [ ] 설정값을 `site.config.ts`에서 읽는가?
+- [ ] CSS 변수만 사용했는가?
+- [ ] draft 글이 프로덕션에 새지 않는가?
+- [ ] UI 변경을 브라우저에서 해당 경로로 확인했는가?
+
+## 변경 이력
+
+| 날짜 | 변경 내용 | 관련 파일 |
+|---|---|---|
+| 2026-08-23 | disclosure_system 프론트 룰을 App Router 정적 사이트 규칙으로 재작성 | `.cursor/rules/frontend-development-rules.mdc` |
