@@ -47,7 +47,7 @@ email: "실제이메일@주소",
 ```bash
 git init
 git add .
-git commit -m "init: 혜택나침반 사이트"
+git commit -m "init: 행정산책 사이트"
 git branch -M main
 git remote add origin https://github.com/사용자명/저장소명.git
 git push -u origin main

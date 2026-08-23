@@ -11,7 +11,7 @@ import { siteConfig } from "../../site.config";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — 정부지원금·복지 정보 안내`,
+    default: `${siteConfig.name} — 민원·복지·지원금, 차근히 따라가기`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

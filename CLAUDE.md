@@ -4,7 +4,7 @@ Cursor Agent를 위한 프로젝트 가이드. 상세는 `.cursor/rules/*.mdc`�
 
 ## 1. 프로젝트 개요
 
-**혜택나침반** — 정부지원금·복지·민원 정보 사이트. Next.js 정적 내보내기 + 콘텐츠 자동화 파이프라인.
+**행정산책** — 정부지원금·복지·민원 안내 사이트. Next.js 정적 내보내기 + 콘텐츠 자동화 파이프라인.
 
 - 런타임: Next.js App Router, React 19, TypeScript, 완전 정적 HTML (`out/`)
 - 콘텐츠: `content/posts/*.md` (파일명 = URL 슬러그)

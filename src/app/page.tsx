@@ -9,14 +9,14 @@ export const dynamic = "force-static";
 
 const SLIDES: HeroSlide[] = [
   {
-    eyebrow: "혜택나침반",
-    title: "놓치기 쉬운 국가 혜택,",
-    titleAccent: "신청 절차 그대로",
-    sub: "자격 조건부터 필요 서류까지. 공고문을 다시 읽지 않아도 되게 정리했습니다.",
+    eyebrow: "행정산책",
+    title: "복잡한 행정 절차,",
+    titleAccent: "산책하듯 차근히",
+    sub: "자격·서류·신청 순서를 회사원처럼 또렷하게, 산길처럼 부담 없이 정리했습니다.",
     href: "/search",
-    cta: "혜택 찾아보기",
+    cta: "필요한 절차 찾기",
     theme: "mint",
-    emoji: "🧭",
+    emoji: "🥾",
   },
   {
     eyebrow: "주거·청년",
@@ -174,7 +174,7 @@ export default function HomePage() {
         <section className="section">
           <div className="wrap">
             <div className="section__head">
-              <h2>이런 혜택도 있어요</h2>
+              <h2>이런 안내도 있어요</h2>
             </div>
             <CardCarousel cards={cards} />
           </div>

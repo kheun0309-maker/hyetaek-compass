@@ -22,17 +22,18 @@ export default function AboutPage() {
 
       <div className="prose">
         <p>
-          {siteConfig.name}은 복잡하게 흩어져 있는 정부 지원 제도와 복지 혜택을
-          <strong> &ldquo;내가 받을 수 있는지&rdquo;</strong>와
-          <strong> &ldquo;어디서 어떻게 신청하는지&rdquo;</strong> 두 가지 기준으로
-          다시 정리하는 정보 사이트입니다.
+          {siteConfig.name}은 정부지원금·복지·민원처럼 흩어진 행정 정보를
+          <strong> 회사원처럼 또렷하게</strong>,{" "}
+          <strong>산길처럼 부담 없이</strong> 따라갈 수 있게 정리하는 안내
+          사이트입니다. 급하게 챙기는 혜택 목록이 아니라, 한 걸음씩 확인하는
+          절차 안내를 지향합니다.
         </p>
 
         <h2>이런 문제를 해결합니다</h2>
         <ul>
           <li>제도 이름은 들어봤는데 내가 대상인지 알 수 없을 때</li>
-          <li>공고문 용어가 어려워 신청 절차가 파악되지 않을 때</li>
-          <li>필요한 서류가 무엇인지 흩어져 있어 찾기 힘들 때</li>
+          <li>공고문 용어가 어려워 신청 순서가 파악되지 않을 때</li>
+          <li>필요한 서류가 흩어져 있어 한 번에 챙기기 힘들 때</li>
         </ul>
 
         <h2>다루는 주제</h2>

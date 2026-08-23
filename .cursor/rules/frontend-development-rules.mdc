@@ -69,4 +69,5 @@ Next.js App Router. 새 목록이 페이지네이션되면 목록 `page.tsx`와 
 
 | 날짜 | 변경 내용 | 관련 파일 |
 |---|---|---|
+| 2026-08-23 | 브랜드명을 행정산책으로 확정 — 표시명·설명은 `site.config.ts`만 수정. 로고 마크는 Header의 `logo__mark` | `site.config.ts`, `Header.tsx` |
 | 2026-08-23 | disclosure_system 프론트 룰을 App Router 정적 사이트 규칙으로 재작성 | `.cursor/rules/frontend-development-rules.mdc` |

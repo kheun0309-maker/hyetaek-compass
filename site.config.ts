@@ -2,14 +2,15 @@
  * 사이트 전역 설정. 배포 전에 이 파일의 값만 바꾸면 됩니다.
  */
 export const siteConfig = {
-  name: "혜택나침반",
-  shortName: "혜택나침반",
+  name: "행정산책",
+  shortName: "행정산책",
   description:
-    "정부지원금·복지수당·민원 발급까지, 놓치기 쉬운 국가 혜택을 절차 그대로 정리합니다.",
-  // ⚠️ 배포 도메인으로 반드시 교체하세요 (사이트맵/OG/canonical에 사용)
-  url: "https://example.com" as string,
+    "회사원처럼 또렷하게, 산길처럼 부담 없이. 정부지원금·복지·민원 절차를 차근히 안내합니다.",
+  // Cloudflare Pages 프로젝트명 haengjeong-sancheck 기준 무료 주소
+  // 커스텀 도메인 연결 후 이 값을 실제 도메인으로 바꾸세요
+  url: "https://haengjeong-sancheck.pages.dev" as string,
   locale: "ko_KR",
-  author: "혜택나침반 편집팀",
+  author: "행정산책 편집팀",
   email: "contact@example.com" as string,
 
   // Google AdSense — 승인 후 발급받은 값으로 교체 (예: "ca-pub-1234567890123456")

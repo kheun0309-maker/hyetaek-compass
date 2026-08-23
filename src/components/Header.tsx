@@ -13,7 +13,7 @@ export default function Header() {
       <div className="wrap site-header__inner">
         <Link href="/" className="logo" aria-label={`${siteConfig.name} 홈`}>
           <span className="logo__mark" aria-hidden="true">
-            혜
+            행
           </span>
           {siteConfig.name}
         </Link>

@@ -14,7 +14,7 @@ import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 
-const PROJECT = process.env.CF_PAGES_PROJECT || "hyetaek-compass";
+const PROJECT = process.env.CF_PAGES_PROJECT || "haengjeong-sancheck";
 const OUT = path.join(process.cwd(), "out");
 
 /** .env 를 읽어 process.env 에 채웁니다 (이미 있는 값은 유지) */
