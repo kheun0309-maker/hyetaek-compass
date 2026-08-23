@@ -30,6 +30,17 @@ content/posts ──┼─▶ discover.ts ─▶ data/keywords.csv (status="")
 | 프로바이더 추가는 `scripts/lib/providers/` + `index.ts` 팩토리 | 호출부가 모델 SDK에 직접 의존하지 않게 |
 | 발행량 램프는 `automation.config.ts` | 화면에 숫자를 박지 않음 |
 | 파일명 = kebab-case 슬러그 | URL과 1:1. 발행 후 변경 시 색인 단절 |
+| 카테고리·기둥은 `site.config.ts` | admin / tips / money 삼기둥. 행정 코어 최소 비중은 `pillarMinShare` |
+
+## 2-A. 콘텐츠 삼기둥
+
+| 기둥 | 카테고리 | 프롬프트 |
+|---|---|---|
+| admin (행정 코어) | subsidy, welfare, housing, health, tax, admin | 자격·신청·서류 구조 |
+| tips | digital, life | funissu형 따라 하기 |
+| money | money | 절약·할인 확인 방법 (단정 금액 금지) |
+
+생활팁이 늘어도 `automation.config.ts`의 `pillarMinShare.admin` 때문에 행정 코어가 우선 발굴됩니다.
 
 ## 3. 초안과 발행
 
@@ -52,4 +63,5 @@ content/posts ──┼─▶ discover.ts ─▶ data/keywords.csv (status="")
 
 | 날짜 | 변경 내용 | 관련 파일 |
 |---|---|---|
+| 2026-08-23 | 삼기둥(admin/tips/money) + digital/life/money 카테고리. 프롬프트 분기·pillarMinShare | `site.config.ts`, `prompts.ts`, `automation.config.ts` |
 | 2026-08-23 | PROJECT-MAP 파이프라인 규칙을 개발방법론 룰로 고정 | `.cursor/rules/content-pipeline.mdc` |

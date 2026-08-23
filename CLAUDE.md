@@ -32,6 +32,7 @@ npm run build:static    # 배포용 정적 빌드 → out/
 | 설정값(도메인, 광고, 카테고리, 램프)은 `site.config.ts` / `automation.config.ts`에만 둔다 | `professional-dev-agent.mdc` |
 | UI는 CSS 변수(`src/app/globals.css`)로만 색·간격을 주고, 절제된 정보 계층을 유지한다 | `ui-design-philosophy.mdc` |
 | 프롬프트는 `scripts/lib/prompts.ts` 한 곳, 슬러그는 발행 후 변경 금지 | `frontend-development-rules.mdc`, `content-pipeline.mdc` |
+| 콘텐츠는 행정 코어 + 생활·디지털 + 생활비 삼기둥 (`pillarMinShare`) | `content-pipeline.mdc`, `site.config.ts` |
 | 중요 기술 결정·버그 원인은 해당 도메인 룰에 자동 캡처 | `knowledge-capture.mdc` |
 
 ## 4. 작업별 참조

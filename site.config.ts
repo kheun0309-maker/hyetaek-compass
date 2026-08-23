@@ -5,7 +5,7 @@ export const siteConfig = {
   name: "행정산책",
   shortName: "행정산책",
   description:
-    "회사원처럼 또렷하게, 산길처럼 부담 없이. 정부지원금·복지·민원 절차를 차근히 안내합니다.",
+    "회사원처럼 또렷하게, 산길처럼 부담 없이. 행정·복지부터 생활·디지털 팁까지 차근히 안내합니다.",
   // Cloudflare Pages 프로젝트명 haengjeong-sancheck 기준 무료 주소
   // 커스텀 도메인 연결 후 이 값을 실제 도메인으로 바꾸세요
   url: "https://haengjeong-sancheck.pages.dev" as string,
@@ -83,13 +83,20 @@ export type CategorySlug =
   | "housing"
   | "health"
   | "tax"
-  | "admin";
+  | "admin"
+  | "digital"
+  | "life"
+  | "money";
+
+/** 콘텐츠 기둥 — 행정 코어가 생활팁에 잠식되지 않게 균형 잡을 때 사용 */
+export type ContentPillar = "admin" | "tips" | "money";
 
 export interface Category {
   slug: CategorySlug;
   name: string;
   description: string;
   emoji: string;
+  pillar: ContentPillar;
 }
 
 export const categories: Category[] = [
@@ -98,39 +105,86 @@ export const categories: Category[] = [
     name: "정부지원금",
     description: "정부·지자체가 주는 현금성 지원금 신청 자격과 절차",
     emoji: "💰",
+    pillar: "admin",
   },
   {
     slug: "welfare",
     name: "복지·수당",
     description: "기초연금, 아동수당, 각종 바우처 등 복지 제도 총정리",
     emoji: "🤝",
+    pillar: "admin",
   },
   {
     slug: "housing",
     name: "주거·청년",
     description: "청년월세, 전세대출, 행복주택 등 주거 지원 제도",
     emoji: "🏠",
+    pillar: "admin",
   },
   {
     slug: "health",
     name: "건강·의료",
     description: "건강검진, 의료비 지원, 산정특례 등 의료 혜택",
     emoji: "🩺",
+    pillar: "admin",
   },
   {
     slug: "tax",
     name: "세금·환급",
     description: "연말정산, 각종 환급금, 세금 감면 신청 방법",
     emoji: "🧾",
+    pillar: "admin",
   },
   {
     slug: "admin",
     name: "민원·행정",
     description: "증명서 발급, 온라인 민원 신청 절차 안내",
     emoji: "📋",
+    pillar: "admin",
+  },
+  {
+    slug: "digital",
+    name: "디지털·앱",
+    description: "스마트폰·포털·앱 사용법과 설정을 따라 하기 쉽게",
+    emoji: "📱",
+    pillar: "tips",
+  },
+  {
+    slug: "life",
+    name: "생활팁",
+    description: "일상에서 막히는 작은 문제, 시즌별 생활 정보",
+    emoji: "🌿",
+    pillar: "tips",
+  },
+  {
+    slug: "money",
+    name: "생활비·할인",
+    description: "통신·카드·쿠폰·쇼핑 절약과 제휴 안내",
+    emoji: "💳",
+    pillar: "money",
   },
 ];
 
 export const categoryMap = Object.fromEntries(
   categories.map((c) => [c.slug, c]),
 ) as Record<CategorySlug, Category>;
+
+/** 헤더에 바로 노출할 주요 카테고리 (나머지는 더보기로) */
+export const navPrimarySlugs: CategorySlug[] = [
+  "subsidy",
+  "admin",
+  "digital",
+  "money",
+];
+
+export const ADMIN_CATEGORY_SLUGS: CategorySlug[] = categories
+  .filter((c) => c.pillar === "admin")
+  .map((c) => c.slug);
+
+export const TIP_CATEGORY_SLUGS: CategorySlug[] = categories
+  .filter((c) => c.pillar !== "admin")
+  .map((c) => c.slug);
+
+export function isAdminCategory(slug: string): boolean {
+  return (ADMIN_CATEGORY_SLUGS as string[]).includes(slug);
+}

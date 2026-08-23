@@ -36,12 +36,12 @@ const PROBLEMS = [
     body: "제도 이름은 들어봤는데, 내가 받을 수 있는지부터 막힐 때.",
   },
   {
-    title: "용어가 어려울 때",
-    body: "공고문 문장이 길어 신청 순서가 한눈에 안 들어올 때.",
+    title: "설정·메뉴를 모를 때",
+    body: "앱이나 폰에 기능은 있는데, 어디를 눌러야 하는지 안 보일 때.",
   },
   {
-    title: "서류가 흩어질 때",
-    body: "필요한 서류가 여러 페이지에 흩어져 한 번에 챙기기 힘들 때.",
+    title: "서류·정보가 흩어질 때",
+    body: "필요한 서류나 팁이 여러 곳에 흩어져 한 번에 챙기기 힘들 때.",
   },
 ] as const;
 
@@ -61,8 +61,9 @@ export default function AboutPage() {
             <strong>산길처럼 부담 없이</strong>
           </h1>
           <p className="about-hero__lead">
-            {siteConfig.name}은 정부지원금·복지·민원처럼 흩어진 행정 정보를 급하게
-            나열하지 않습니다. 한 걸음씩 확인하는 절차 안내를 지향합니다.
+            {siteConfig.name}은 정부지원금·복지·민원뿐 아니라, 앱 설정·생활
+            절약처럼 일상에서 막히는 일도 급하게 나열하지 않습니다. 한 걸음씩
+            확인하는 절차 안내를 지향합니다.
           </p>
           <div className="about-hero__actions">
             <Link href="/search" className="about-btn about-btn--primary">
@@ -96,7 +97,7 @@ export default function AboutPage() {
         <div className="wrap">
           <header className="about-section__head">
             <h2>다루는 주제</h2>
-            <p>카테고리마다 자격·서류·신청 순서를 같은 기준으로 정리합니다.</p>
+            <p>행정 코어와 생활·디지털·할인 팁을 같은 기준으로 차근히 정리합니다.</p>
           </header>
           <div className="about-topic-grid">
             {categories.map((c) => (

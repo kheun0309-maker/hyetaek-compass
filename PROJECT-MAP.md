@@ -14,7 +14,8 @@
 | 광고 개수·위치 조절 | `site.config.ts` → `ads` |
 | 쿠팡 파트너스 등 제휴 설정 | `site.config.ts` → `affiliate` |
 | GA4 / 서치콘솔·네이버 소유확인 코드 | `site.config.ts` → `gaId`, `verification` |
-| 카테고리 추가·삭제·이름 변경 | `site.config.ts` → `categories` (+ `CategorySlug` 타입) |
+| 카테고리 추가·삭제·이름 변경 | `site.config.ts` → `categories` (+ `CategorySlug`, `pillar`) |
+| 헤더에 바로 보일 카테고리 | `site.config.ts` → `navPrimarySlugs` |
 | 하루 몇 개씩 자동 생성할지 | `automation.config.ts` → `ramp` |
 | 자동 발굴 주제 범위 넓히기 | `data/seeds.txt` |
 | AI가 쓰는 글의 구조·문체·규칙 | `scripts/lib/prompts.ts` |

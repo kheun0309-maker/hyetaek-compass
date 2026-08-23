@@ -56,6 +56,17 @@ export const automationConfig = {
    */
   balanceCategories: true,
 
+  /**
+   * 콘텐츠 기둥 최소 비중 (발행+초안 합 기준).
+   * admin = 행정 코어 6카테고리, tips = digital+life, money = money.
+   * 생활팁이 폭증해도 행정 코어가 전체의 이 비율 아래로 안 내려가게 발굴·생성을 우선한다.
+   */
+  pillarMinShare: {
+    admin: 0.45,
+    tips: 0.25,
+    money: 0.1,
+  },
+
   /** 하루 최대 생성 개수 안전장치 — 실수로 API 비용이 폭주하는 것을 막습니다 */
   hardDailyLimit: 15,
 } as const;

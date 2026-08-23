@@ -181,6 +181,60 @@ ol {
   color: var(--brand);
 }
 
+.nav-more {
+  position: relative;
+  flex-shrink: 0;
+}
+.nav-more__btn {
+  padding: 7px 11px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nav-more__btn:hover,
+.nav-more__btn[aria-expanded="true"] {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+.nav-more__btn[aria-current="true"] {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+.nav-more__panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  padding: 8px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  gap: 2px;
+  z-index: 120;
+}
+.nav-more__panel a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+.nav-more__panel a:hover,
+.nav-more__panel a[aria-current="page"] {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
 /* ─────────────────────────────────────────────────────────
    검색
    ───────────────────────────────────────────────────────── */

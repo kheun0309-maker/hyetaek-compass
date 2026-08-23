@@ -6,7 +6,8 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { parseCsv } from "./csv";
-import { categories, type CategorySlug } from "../../site.config";
+import { categories, type CategorySlug, type ContentPillar } from "../../site.config";
+import { automationConfig } from "../../automation.config";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
 const CSV = path.join(process.cwd(), "data", "keywords.csv");
@@ -23,7 +24,7 @@ export interface Inventory {
   published: number;
   /** 초안 포함 전체 글 수 */
   total: number;
-  /** 카테고리별 발행 글 수 */
+  /** 카테고리별 글 수 (발행+초안 — 기둥 균형·발굴 우선순위용) */
   byCategory: Record<string, number>;
   /** 이미 존재하는 글 제목 (중복 회피용) */
   titles: string[];
@@ -53,11 +54,9 @@ export function readInventory(): Inventory {
       try {
         const { data } = matter(fs.readFileSync(path.join(POSTS_DIR, file), "utf8"));
         if (data.title) titles.push(String(data.title));
-        if (data.draft !== true) {
-          published++;
-          const cat = String(data.category ?? "");
-          if (cat in byCategory) byCategory[cat]++;
-        }
+        const cat = String(data.category ?? "");
+        if (cat in byCategory) byCategory[cat]++;
+        if (data.draft !== true) published++;
       } catch {
         /* 깨진 파일은 무시 */
       }
@@ -89,10 +88,31 @@ export function readInventory(): Inventory {
   };
 }
 
-/** 글 수가 가장 적은 카테고리부터 정렬 (균형 채우기용) */
+/** 글 수가 가장 적은 카테고리부터 정렬. 기둥 최소 비중 미달이면 해당 기둥을 앞에 둔다. */
 export function categoriesByNeed(inv: Inventory): CategorySlug[] {
+  const total = Math.max(
+    1,
+    Object.values(inv.byCategory).reduce((a, b) => a + b, 0),
+  );
+  const pillarCount: Record<ContentPillar, number> = {
+    admin: 0,
+    tips: 0,
+    money: 0,
+  };
+  for (const c of categories) {
+    pillarCount[c.pillar] += inv.byCategory[c.slug] ?? 0;
+  }
+
+  const min = automationConfig.pillarMinShare;
+  const deficit = (p: ContentPillar) =>
+    pillarCount[p] / total < min[p] ? 0 : 1;
+
   return [...categories]
-    .sort((a, b) => (inv.byCategory[a.slug] ?? 0) - (inv.byCategory[b.slug] ?? 0))
+    .sort((a, b) => {
+      const pillarCmp = deficit(a.pillar) - deficit(b.pillar);
+      if (pillarCmp !== 0) return pillarCmp;
+      return (inv.byCategory[a.slug] ?? 0) - (inv.byCategory[b.slug] ?? 0);
+    })
     .map((c) => c.slug);
 }
 
