@@ -19,7 +19,7 @@ Cursor Agent를 위한 프로젝트 가이드. 상세는 `.cursor/rules/*.mdc`�
 ```powershell
 npm install
 npm run doctor          # 설정·API 키 진단
-npm run dev             # http://localhost:3000 (초안 draft:true 도 보임)
+npm run dev             # http://localhost:3006 (초안 draft:true 도 보임)
 npm run build:static    # 배포용 정적 빌드 → out/
 ```
 

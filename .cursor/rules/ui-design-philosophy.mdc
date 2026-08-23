@@ -18,7 +18,8 @@ alwaysApply: true
 | 페이지 배경 | `--bg`, `--bg-soft`, `--bg-elev` |
 | 테두리 | `--border`, `--border-strong` |
 | 텍스트 | `--text`, `--text-soft`, `--text-mute` |
-| 강조 | `--brand`, `--brand-soft` |
+| 강조 | `--brand`, `--brand-soft` (민트) |
+| CTA/포인트 | `--accent`, `--accent-soft` (따뜻한 골드) |
 | 경고 박스 | `--warn-bg`, `--warn-border` |
 | 반경·그림자·폭 | `--radius`, `--radius-sm`, `--shadow-lg`, `--wrap`, `--article` |
 
@@ -51,4 +52,5 @@ alwaysApply: true
 
 | 날짜 | 변경 내용 | 관련 파일 |
 |---|---|---|
+| 2026-08-23 | 행정산책 브랜드 톤: brand=민트, accent=골드. about 페이지 섹션형 레이아웃 | `globals.css`, `about/page.tsx` |
 | 2026-08-23 | disclosure_system UI 철학을 이 사이트 토큰(`globals.css`)·블로그 레이아웃에 맞게 도입 | `.cursor/rules/ui-design-philosophy.mdc` |

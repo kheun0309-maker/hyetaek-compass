@@ -15,10 +15,10 @@
 npm install
 cp .env.example .env      # 이미 생성되어 있습니다. 키만 채우세요
 npm run doctor            # 설정 점검 + API 연결 테스트
-npm run dev               # http://localhost:3000
+npm run dev               # http://localhost:3006
 ```
 
-**설정 상태는 브라우저에서도 볼 수 있습니다** → http://localhost:3000/setup
+**설정 상태는 브라우저에서도 볼 수 있습니다** → http://localhost:3006/setup
 (운영자 전용 대시보드. 검색엔진에 노출되지 않으며 API 키는 표시하지 않습니다)
 
 `.env`에서 AI 프로바이더를 고릅니다.

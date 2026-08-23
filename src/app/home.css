@@ -36,23 +36,23 @@
   pointer-events: auto;
 }
 .hero-slide--mint {
-  background: linear-gradient(160deg, #e6f7f3 0%, #eef6ff 100%);
+  background: #e8f5f1;
 }
 .hero-slide--blue {
-  background: linear-gradient(160deg, #e9f1ff 0%, #f2ecff 100%);
+  background: #eaf2f8;
 }
 .hero-slide--peach {
-  background: linear-gradient(160deg, #fff1e8 0%, #fdf3e3 100%);
+  background: #f7f1e8;
 }
 @media (prefers-color-scheme: dark) {
   .hero-slide--mint {
-    background: linear-gradient(160deg, #0f2320 0%, #101a2b 100%);
+    background: #12241f;
   }
   .hero-slide--blue {
-    background: linear-gradient(160deg, #101a2e 0%, #1a1630 100%);
+    background: #121c28;
   }
   .hero-slide--peach {
-    background: linear-gradient(160deg, #2a1d13 0%, #241d12 100%);
+    background: #241c14;
   }
 }
 
@@ -127,11 +127,7 @@
   width: 208px;
   height: 208px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 32% 28%,
-    color-mix(in srgb, var(--brand) 26%, transparent),
-    color-mix(in srgb, var(--accent) 16%, transparent)
-  );
+  background: color-mix(in srgb, var(--brand) 18%, transparent);
 }
 .hero-slide__emoji {
   position: relative;
@@ -236,18 +232,18 @@
   display: flex;
   /* flex:1 과 flex-grow:0 을 함께 쓰면 basis가 0이 되어 폭이 사라집니다 */
   flex: 0 0 auto;
-  background: var(--brand);
+  background: var(--accent);
 }
 .quickbar__primary a {
   padding: 20px 26px;
   font-weight: 800;
   font-size: 0.95rem;
-  color: #fff;
+  color: #1a1608;
   white-space: nowrap;
   transition: background 0.15s;
 }
 .quickbar__primary a:hover {
-  background: color-mix(in srgb, #000 12%, var(--brand));
+  background: color-mix(in srgb, #000 8%, var(--accent));
 }
 .quickbar__secondary {
   justify-content: center;

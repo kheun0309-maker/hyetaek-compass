@@ -252,7 +252,7 @@ function summary() {
 
   console.log(`
 다음에 할 일
-  · 설정 상태를 브라우저에서 보려면:   npm run dev  →  http://localhost:3000/setup
+  · 설정 상태를 브라우저에서 보려면:   npm run dev  →  http://localhost:3006/setup
   · 글 생성:                           npm run pipeline
   · 초안 검토/발행:                    npm run review
   · 배포 절차:                         DEPLOY.md

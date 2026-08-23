@@ -5,6 +5,11 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="wrap">
+        <div className="footer-brand">
+          <div className="footer-brand__name">{siteConfig.name}</div>
+          <p className="footer-brand__desc">{siteConfig.description}</p>
+        </div>
+
         <div className="footer-grid">
           <div className="footer-col">
             <h3>카테고리</h3>
