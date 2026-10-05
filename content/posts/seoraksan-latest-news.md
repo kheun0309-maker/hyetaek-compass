@@ -19,7 +19,7 @@ reviewMethod: source-feed
 
 [설악산 특집 한눈에 보기](/seoraksan) · [교통편 정리](/seoraksan-transport-guide) · [단풍·코스 안내](/seoraksan-autumn-guide)
 
-일부 출처(knps-tv, sandasong)는 이번 수집에 실패했습니다. 해당 자료는 마지막 성공 때 저장한 목록이며 최신 여부를 원문에서 확인하세요.
+일부 출처(knps-tv, santayou, sandasong)는 이번 수집에 실패했습니다. 해당 자료는 마지막 성공 때 저장한 목록이며 최신 여부를 원문에서 확인하세요.
 
 ## 공식 공지·기상 소식
 
