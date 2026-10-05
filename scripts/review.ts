@@ -5,16 +5,16 @@
  *   npm run review -- --publish <slug>  // 특정 초안 발행 (draft:false, reviewed:true)
  *   npm run review -- --publish-all     // ⚠️ 확인 없이 전부 발행 (권장하지 않음)
  *
- * 왜 이 단계가 필요한가:
- *   구글은 검토 없이 대량 생성된 콘텐츠를 "Scaled Content Abuse"로 제재합니다.
- *   AI 사용 자체는 문제가 아니지만, 사람이 사실을 확인했다는 과정이 있어야
- *   장기적으로 색인과 애드센스가 유지됩니다.
+ * AI 해설의 금액·절차·근거를 검토한 뒤에만 발행한다.
+ * 원문 제목·날짜 목록의 자동 갱신은 refresh-sources.ts에서 별도로 처리한다.
  */
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { parseArgs, str } from "./lib/cli";
 import { categoryMap } from "../site.config";
+import { isPublished } from "../src/lib/publication";
+import { koreaDate } from "./lib/source-feed";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
 
@@ -45,7 +45,7 @@ function listDrafts(): Draft[] {
         date: String(data.date ?? ""),
         provider: String(data.provider ?? "-"),
         chars: content.trim().length,
-        draft: data.draft === true,
+        draft: !isPublished(data),
       };
     })
     .filter((d) => d.draft)
@@ -53,6 +53,10 @@ function listDrafts(): Draft[] {
 }
 
 function publish(slug: string): boolean {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
+    console.error("영문 소문자·숫자·하이픈 슬러그만 발행할 수 있습니다.");
+    return false;
+  }
   const file = path.join(POSTS_DIR, `${slug}.md`);
   if (!fs.existsSync(file)) {
     console.error(`파일 없음: content/posts/${slug}.md`);
@@ -62,7 +66,8 @@ function publish(slug: string): boolean {
   const parsed = matter(fs.readFileSync(file, "utf8"));
   parsed.data.draft = false;
   parsed.data.reviewed = true;
-  parsed.data.updated = new Date().toISOString().slice(0, 10);
+  parsed.data.updated = koreaDate();
+  parsed.data.reviewMethod = "editorial";
 
   fs.writeFileSync(file, matter.stringify(parsed.content, parsed.data), "utf8");
   console.log(`발행: ${slug}`);
@@ -74,7 +79,7 @@ function main() {
 
   const one = str(args.publish);
   if (one) {
-    publish(one);
+    if (!publish(one)) { process.exitCode = 1; return; }
     console.log("\n검색 인덱스를 갱신하세요:  npm run index");
     return;
   }

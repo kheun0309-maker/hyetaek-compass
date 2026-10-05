@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "next dev -p 3006",
     "build": "npm run index && next build",
-    "lint": "next lint",
+    "lint": "npm run typecheck",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test",
+    "refresh:sources": "tsx scripts/refresh-sources.ts",
     "index": "tsx scripts/build-search-index.ts",
     "generate": "tsx scripts/generate.ts",
     "new": "tsx scripts/new-post.ts",

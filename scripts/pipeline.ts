@@ -18,7 +18,8 @@
 import { spawnSync } from "node:child_process";
 import "dotenv/config";
 
-import { parseArgs, str, num } from "./lib/cli";
+import { parseArgs, str, boundedCount } from "./lib/cli";
+import { pickKeywords } from "./lib/inventory";
 import { readInventory, categoriesByNeed } from "./lib/inventory";
 import { automationConfig, currentPhase } from "../automation.config";
 import { categoryMap } from "../site.config";
@@ -46,10 +47,7 @@ async function main() {
   const inv = readInventory();
   const phase = currentPhase(inv.published);
 
-  const planned = Math.min(
-    num(args.count, phase.perRun),
-    automationConfig.hardDailyLimit,
-  );
+  const planned = boundedCount(args.count, phase.perRun, automationConfig.hardDailyLimit);
 
   line("═");
   console.log("자동 콘텐츠 파이프라인");
@@ -87,7 +85,7 @@ async function main() {
   // ── 2단계: 초안 생성 ────────────────────────────────────
   console.log(`\n[2/3] 초안 ${planned}개 생성`);
   if (dry) {
-    const preview = readInventory().pendingKeywords.slice(0, planned);
+    const preview = pickKeywords(inv, planned, automationConfig.balanceCategories);
     console.log("      (dry run) 다음 키워드가 처리될 예정입니다:");
     for (const k of preview) console.log(`        · [${k.category}] ${k.keyword}`);
   } else if (
@@ -102,7 +100,7 @@ async function main() {
   if (dry) {
     console.log("      (dry run — 실행 생략)");
   } else {
-    run("scripts/build-search-index.ts", []);
+    if (!run("scripts/build-search-index.ts", [])) throw new Error("검색 인덱스 생성 실패");
   }
 
   const after = readInventory();

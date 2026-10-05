@@ -1,6 +1,6 @@
 # 행정산책
 
-정부지원금·복지·민원을 회사원처럼 또렷하게, 산길처럼 부담 없이 안내하는 사이트.
+행정·복지, 디지털·생활비, 산길·여행을 차근히 안내하는 사이트.
 **Next.js 15 정적 생성 + AI 콘텐츠 파이프라인 + 한글 검색 + 애드센스 최적화.**
 
 - 📍 **[PROJECT-MAP.md](PROJECT-MAP.md)** — 뭘 고치려면 어떤 파일을 열어야 하는지
@@ -44,7 +44,7 @@ npm run doctor -- --models
 npm run pipeline
 npm run pipeline -- --dry           # 비용 없이 계획만 확인
 
-# 검토 후 발행 (이 단계를 건너뛰면 구글 제재 대상)
+# 사실·절차를 검토한 뒤 발행
 npm run review
 npm run review -- --publish <슬러그>
 
@@ -69,11 +69,32 @@ npm run discover -- --provider openai
 |---|---|
 | **정적 생성** | 모든 글이 빌드 시 HTML로 구워집니다. 서버 비용 0원, 최고 속도 |
 | **멀티 AI** | Claude / OpenAI / Grok 을 명령 하나로 전환 |
-| **자동 램프** | 초기 하루 10편 → 안정기 2편으로 발행량 자동 조절 |
+| **자동 수집** | 공식 공지·지역신문·블로그·유튜브의 제목·게시일·원문 링크를 매일 갱신 |
+| **선택적 AI 램프** | API 키와 활성화 변수를 설정하면 회당 초안 개수 조절 |
 | **초성 검색** | `ㅊㄴㅇㅅ` → 청년월세. 서버 없이 클라이언트에서 동작 |
 | **광고 최적화** | 지연 로딩 · CLS 0 · 광고 과밀 방지 가드 |
 | **SEO 기본기** | 사이트맵 · robots · JSON-LD · RSS · ads.txt 자동 생성 |
 | **안전장치** | AI 초안은 `draft:true`. 사람이 검토해야 발행됨 |
+
+## 설악산 자동 운영
+
+- `/seoraksan`: 단풍·코스·차편·방문 준비와 출처별 최근 자료.
+- `/seoraksan-latest-news`: 고정 URL에서 소식 목록만 갱신. 원문 본문·사진은 복제하지 않음.
+- `npm run refresh:sources`: API 키 없이 공개 출처를 수집. 출처와 검색 범위는 `automation.config.ts`의 `research`에 설정.
+- GitHub Actions는 매일 **한국시간 09:17** 예약 실행(지연 가능). 수집 → 타입·11개 회귀 검사 → 정적 빌드 → 변경 저장 → 연결된 Cloudflare Pages 배포.
+- 최근 45일의 설악산 관련 제목만 수집. 실패한 출처는 이전 목록과 마지막 성공 시각을 유지. 공식 출처가 모두 실패하거나 검사·빌드에 실패하면 갱신 커밋을 만들지 않음.
+- 배포가 멈춰도 특집 열람 시 수집 후 48시간 경과 여부를 확인. 영상은 클릭할 때만 삽입.
+- 사진에는 저작자·이용허락·실제 촬영일을 표시. 과거 자료 사진이며 올해 단풍 실황으로 표시하지 않음.
+
+GitHub의 Actions → **자동 콘텐츠 파이프라인 → Run workflow**에서 즉시 출처 갱신을 실행할 수 있습니다. `count`를 비우면 기본적으로 AI를 호출하지 않습니다.
+
+AI 초안도 예약 생성하려면 저장소 변수 `CONTENT_GENERATION_ENABLED=true`, `AI_PROVIDER=openai|anthropic|grok`와 해당 Secret(`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `XAI_API_KEY`)을 설정하세요. 모델 ID는 해당 `*_MODEL` 변수로 설정합니다. AI 생성 실패는 실행 결과에 실패로 남으며, 검증을 통과한 출처 갱신은 저장됩니다. AI 해설은 `reviewed:true`까지 공개 빌드·검색·사이트맵에서 제외합니다.
+
+```bash
+npm run refresh:sources -- --dry  # 네트워크·파일 변경 없이 과정 확인
+npm run check                    # 타입 및 회귀 검사 (lint도 타입 검사에 연결)
+npm run build:static             # 배포 검증
+```
 
 ---
 

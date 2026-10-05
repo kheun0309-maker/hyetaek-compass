@@ -13,7 +13,7 @@ type Params = Promise<{ page: string }>;
 
 export function generateStaticParams() {
   const total = Math.ceil(getAllPosts().length / siteConfig.postsPerPage);
-  // 1페이지는 "/" 가 담당하므로 2페이지부터 생성
+  // 1페이지는 "/posts"가 담당하므로 2페이지부터 생성
   const params = Array.from({ length: Math.max(0, total - 1) }, (_, i) => ({
     page: String(i + 2),
   }));

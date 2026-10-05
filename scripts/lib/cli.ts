@@ -21,6 +21,11 @@ export function str(v: unknown): string | undefined {
 }
 
 export function num(v: unknown, fallback: number): number {
+  if (typeof v === "boolean" || v === undefined || v === null || v === "") return fallback;
   const n = Number(v);
   return Number.isFinite(n) ? n : fallback;
+}
+
+export function boundedCount(value: unknown, fallback: number, max: number): number {
+  return Math.max(0, Math.min(max, Math.floor(num(value, fallback))));
 }

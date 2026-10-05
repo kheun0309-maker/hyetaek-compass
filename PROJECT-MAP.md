@@ -32,6 +32,13 @@
 | 구조화 데이터(JSON-LD) | `src/lib/seo.ts` |
 | 개인정보처리방침·이용약관 문구 | `src/app/privacy/`, `src/app/terms/` |
 | 자동 실행 시각(cron) | `.github/workflows/content.yml` |
+| 설악산 수집 출처·기간·제한 변경 | `automation.config.ts` → `research` |
+| 설악산 공지·RSS 파싱·실패 처리 | `scripts/lib/source-feed.ts`, `scripts/refresh-sources.ts` |
+| 설악산 특집 화면 | `src/app/seoraksan/page.tsx`, `src/lib/seoraksan.ts` |
+| 출처별 마지막 성공 상태 | `data/topics/seoraksan.json` |
+| AI 미검토 글 공개 차단 | `src/lib/publication.ts` |
+| 사진 저작자 표기·영상·갱신 지연 표시 | `PhotoCredit.tsx`, `VideoPreview.tsx`, `DataFreshness.tsx` |
+| 수집·발행·마크다운 회귀 검사 | `tests/` (`npm run check`) |
 | 정적 호스팅 캐시 헤더 | `public/_headers` |
 | 리다이렉트 규칙 | `public/_redirects` |
 | 배포 절차 | `DEPLOY.md` |
@@ -130,8 +137,8 @@ content/posts ───┘   (AI: 갭 분석)      (status="")
                             draft: true / reviewed: false
                                             │
                                     ┌───────┴───────┐
-                                    │  사람이 검토   │  ← 이 단계를 건너뛰면
-                                    └───────┬───────┘     구글 제재 대상
+                                    │  사람이 검토   │  ← 사실·절차 확인
+                                    └───────┬───────┘
                                             │
                                      review.ts --publish
                                             │
@@ -146,6 +153,8 @@ content/posts ───┘   (AI: 갭 분석)      (status="")
 ---
 
 ## 4. 명령어
+
+공개 출처 경로는 AI 해설과 별개입니다. `refresh-sources.ts` → `data/topics/seoraksan.json` + 고정 URL 소식 글 → 검사·정적 빌드 → GitHub 저장 → Cloudflare Pages. 제목·게시일·원문 링크만 자동 발행하고, 수집 실패는 마지막 성공 상태를 보존합니다.
 
 | 명령 | 설명 |
 |---|---|
@@ -165,6 +174,8 @@ content/posts ───┘   (AI: 갭 분석)      (status="")
 | `npm run doctor` | 설정 진단 + API 키 연결 테스트 |
 | `npm run doctor -- --models` | 내 계정에서 쓸 수 있는 모델 ID 목록 |
 | `npm run index` | 검색 인덱스만 재생성 |
+| `npm run refresh:sources` | 공개 출처 수집·설악산 소식 갱신 (키 불필요) |
+| `npm run check` | 타입 및 회귀 검사 |
 
 모든 AI 명령에 `--provider anthropic\|openai\|grok` 를 붙여 모델을 바꿀 수 있습니다.
 

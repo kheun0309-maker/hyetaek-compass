@@ -7,6 +7,8 @@ export default function PostCard({ post }: { post: Post }) {
 
   return (
     <Link href={`/${post.slug}`} className="post-card">
+      {post.thumbnail && <img className="post-card__image" src={post.thumbnail} alt="" loading="lazy" width={600} height={400} />}
+      {post.thumbnail && post.cover && <span className="post-card__credit">사진: {post.cover.author} · {post.cover.license} · {post.cover.capturedAt} 자료 사진<br />원본·이용허락 링크는 글에서 확인</span>}
       <span className="post-card__cat">
         {cat ? `${cat.emoji} ${cat.name}` : post.category}
       </span>
@@ -27,8 +29,7 @@ export function PostList({ posts }: { posts: Post[] }) {
       <div className="empty-state">
         <strong>아직 발행된 글이 없습니다</strong>
         <span>
-          npm run generate 로 초안을 만들고, 검토 후 draft: false 로 바꾸면
-          여기에 나타납니다.
+          이 주제의 안내를 준비하고 있습니다. 다른 카테고리도 살펴보세요.
         </span>
       </div>
     );

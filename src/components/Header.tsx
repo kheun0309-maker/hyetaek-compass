@@ -69,21 +69,20 @@ export default function Header() {
               type="button"
               className="nav-more__btn"
               aria-expanded={moreOpen}
-              aria-haspopup="true"
+              aria-controls="more-categories"
               aria-current={moreActive ? "true" : undefined}
               onClick={() => setMoreOpen((v) => !v)}
             >
               더보기
             </button>
             {moreOpen && (
-              <div className="nav-more__panel" role="menu">
+              <div className="nav-more__panel" id="more-categories">
                 {more.map((c) => {
                   const href = `/category/${c.slug}`;
                   return (
                     <Link
                       key={c.slug}
                       href={href}
-                      role="menuitem"
                       aria-current={pathname === href ? "page" : undefined}
                       onClick={() => setMoreOpen(false)}
                     >

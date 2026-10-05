@@ -13,6 +13,17 @@ export interface PostFrontmatter {
   updated?: string;
   tags?: string[];
   thumbnail?: string;
+  cover?: {
+    alt: string;
+    author: string;
+    sourceUrl: string;
+    license: string;
+    licenseUrl: string;
+    capturedAt: string;
+  };
+  sources?: { title: string; url: string }[];
+  factCheckedAt?: string;
+  reviewMethod?: "editorial" | "source-feed";
   faq?: FaqItem[];
   /** 초안 상태. true면 프로덕션 빌드에서 제외됩니다. */
   draft?: boolean;

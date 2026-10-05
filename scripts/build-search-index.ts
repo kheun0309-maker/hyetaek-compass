@@ -11,6 +11,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { toChosung, normalize } from "../src/lib/hangul";
+import { isPublished } from "../src/lib/publication";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
 const OUT = path.join(process.cwd(), "public", "search-index.json");
@@ -52,7 +53,7 @@ function main() {
     const raw = fs.readFileSync(path.join(POSTS_DIR, file), "utf8");
     const { data, content } = matter(raw);
 
-    if (data.draft === true) continue;
+    if (!isPublished(data)) continue;
     if (!data.title || !data.category) continue;
 
     const title = String(data.title);

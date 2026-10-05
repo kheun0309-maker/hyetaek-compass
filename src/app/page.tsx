@@ -3,12 +3,14 @@ import { getAllPosts, getPostsByCategory } from "@/lib/posts";
 import HeroCarousel, { type HeroSlide } from "@/components/HeroCarousel";
 import CardCarousel, { type CarouselCard } from "@/components/CardCarousel";
 import AdSlot from "@/components/AdSlot";
+import PhotoCredit from "@/components/PhotoCredit";
 import {
   categories,
   categoryMap,
   ADMIN_CATEGORY_SLUGS,
   TIP_CATEGORY_SLUGS,
   type CategorySlug,
+  siteConfig,
 } from "../../site.config";
 
 export const dynamic = "force-static";
@@ -47,7 +49,7 @@ const SLIDES: HeroSlide[] = [
 ];
 
 const QUICK_PRIMARY = [
-  { label: "전체 글", href: "/page/2" },
+  { label: "전체 글", href: "/posts" },
   { label: "통합 검색", href: "/search" },
 ];
 
@@ -66,6 +68,7 @@ function postsInSlugs(slugs: CategorySlug[], limit: number) {
 
 export default function HomePage() {
   const posts = getAllPosts();
+  const featuredCover = posts.find((post) => post.slug === "seoraksan-autumn-guide")?.cover;
   const latest = posts.slice(0, 4);
   const adminPosts = postsInSlugs(ADMIN_CATEGORY_SLUGS, 4);
   const tipPosts = postsInSlugs(TIP_CATEGORY_SLUGS, 4);
@@ -111,7 +114,7 @@ export default function HomePage() {
           <div className="news-col">
             <div className="news-col__head">
               <h2>새로 올라온 글</h2>
-              <Link href="/page/2">바로가기 ›</Link>
+              <Link href="/posts">바로가기 ›</Link>
             </div>
             <ul className="news-list">
               {latest.map((p) => (
@@ -199,6 +202,13 @@ export default function HomePage() {
               )}
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap featured-guide">
+          <figure><img src={siteConfig.featuredGuide.image} width={2048} height={1365} alt="가을 단풍이 물든 설악산 계곡" loading="lazy" />{featuredCover && <PhotoCredit cover={featuredCover} />}</figure>
+          <div><p className="topic-eyebrow">이번에 걷고 싶은 길</p><h2>{siteConfig.featuredGuide.title}</h2><p>{siteConfig.featuredGuide.description}</p><Link href={siteConfig.featuredGuide.href} className="about-btn about-btn--primary">설악산 특집 보기 →</Link></div>
         </div>
       </section>
 

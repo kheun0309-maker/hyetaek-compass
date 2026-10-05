@@ -5,7 +5,7 @@ export const siteConfig = {
   name: "행정산책",
   shortName: "행정산책",
   description:
-    "회사원처럼 또렷하게, 산길처럼 부담 없이. 행정·복지부터 생활·디지털 팁까지 차근히 안내합니다.",
+    "회사원처럼 또렷하게, 산길처럼 부담 없이. 행정·복지, 생활·디지털, 산길·여행을 차근히 안내합니다.",
   // Cloudflare Pages 프로젝트명 haengjeong-sancheck 기준 무료 주소
   // 커스텀 도메인 연결 후 이 값을 실제 도메인으로 바꾸세요
   url: "https://haengjeong-sancheck.pages.dev" as string,
@@ -75,6 +75,13 @@ export const siteConfig = {
   },
 
   postsPerPage: 12,
+
+  featuredGuide: {
+    title: "설악산, 가을을 걷는 준비",
+    description: "단풍·차편·탐방 준비부터 최근 영상과 소식까지, 출처와 날짜를 함께 확인하세요.",
+    href: "/seoraksan",
+    image: "/images/seoraksan-autumn.jpg",
+  },
 } as const;
 
 export type CategorySlug =
@@ -86,7 +93,8 @@ export type CategorySlug =
   | "admin"
   | "digital"
   | "life"
-  | "money";
+  | "money"
+  | "travel";
 
 /** 콘텐츠 기둥 — 행정 코어가 생활팁에 잠식되지 않게 균형 잡을 때 사용 */
 export type ContentPillar = "admin" | "tips" | "money";
@@ -157,6 +165,13 @@ export const categories: Category[] = [
     pillar: "tips",
   },
   {
+    slug: "travel",
+    name: "산길·여행",
+    description: "국립공원 탐방, 단풍, 교통·예약과 주말 산책 안내",
+    emoji: "🏞️",
+    pillar: "tips",
+  },
+  {
     slug: "money",
     name: "생활비·할인",
     description: "통신·카드·쿠폰·쇼핑 절약과 제휴 안내",
@@ -174,7 +189,7 @@ export const navPrimarySlugs: CategorySlug[] = [
   "subsidy",
   "admin",
   "digital",
-  "money",
+  "travel",
 ];
 
 export const ADMIN_CATEGORY_SLUGS: CategorySlug[] = categories

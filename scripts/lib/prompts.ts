@@ -102,6 +102,18 @@ function tipBodyRules(category: string): string {
 - 특정 쇼핑몰·카드 혜택은 가입 권유 톤으로 쓰지 말고, 확인 방법 중심으로 쓴다.`;
 }
 
+function travelBodyRules(): string {
+  return `## 여행·산길 안내 구조
+1. 누구에게 맞는 방문인지와 방문 전 공식 확인 순서를 먼저 제시한다.
+2. 이동 방법, 코스 선택, 예약·통제 확인, 준비물 순서로 정리한다.
+3. 출발지·도착지·환승 지점을 구분한다. 배차·요금·입산시간은 원문 확인 전 확정하지 않는다.
+4. 단풍 관측일, 예보일, 평년값, 개인 후기의 촬영일을 구분한다. '현재 절정'을 근거 없이 쓰지 않는다.
+5. 최신 공지·신문·영상·블로그를 읽었다고 가장하지 않는다. 제공된 원문이 없으면 확인이 필요한 항목이라고 쓴다.
+6. 사진과 영상의 저작자·이용허락·촬영일이 확인되지 않으면 첨부하지 않는다.
+7. FAQ와 방문 직전 체크리스트를 덧붙인다. 본문 2,000~3,200자, 제목 40자 이내.
+이 출력은 검토용 초안이다. 탐방로 안전과 교통 조건은 실제 공식 원문으로 확인해야 한다.`;
+}
+
 export function buildUserPrompt({
   keyword,
   category,
@@ -129,7 +141,7 @@ ${catLine}
 ${dupBlock}
 ${frontmatterBlock()}
 
-${admin ? adminBodyRules() : tipBodyRules(category)}`;
+${admin ? adminBodyRules() : category === "travel" ? travelBodyRules() : tipBodyRules(category)}`;
 }
 
 /** 키워드 확장용 프롬프트 — 1개 시드에서 롱테일 키워드 여러 개를 뽑습니다. */
@@ -192,7 +204,7 @@ export function buildDiscoveryPrompt(input: {
 
   const intentHint = isAdminCategory(categorySlug)
     ? `"자격/신청방법/서류/기간/금액/거절사유/재신청" 같은 실행형 의도`
-    : `"설정방법/끄는법/하는법/안될때/절약/할인" 같은 실행형 의도`;
+    : categorySlug === "travel" ? `"차편/코스/예약/통제 확인/방문 준비" 같은 실행형 의도` : `"설정방법/끄는법/하는법/안될때/절약/할인" 같은 실행형 의도`;
 
   return `"${categoryName}" 카테고리(${categoryDesc})에서
 아직 다루지 않은 롱테일 검색 키워드 ${count}개를 발굴하세요.

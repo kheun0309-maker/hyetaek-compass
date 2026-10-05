@@ -5,6 +5,7 @@
  *       "꾸준함"으로 전환합니다. 구글은 발행 속도가 갑자기 튀는 사이트를
  *       스팸 신호로 보기 때문에, 무한정 대량 발행은 오히려 손해입니다.
  */
+import type { TopicSource } from "./src/lib/topic-types";
 
 export interface RampPhase {
   /** 발행된 글이 이 개수 미만일 때 적용 (마지막 단계는 null = 무제한) */
@@ -58,7 +59,7 @@ export const automationConfig = {
 
   /**
    * 콘텐츠 기둥 최소 비중 (발행+초안 합 기준).
-   * admin = 행정 코어 6카테고리, tips = digital+life, money = money.
+   * admin = 행정 코어 6카테고리, tips = digital+life+travel, money = money.
    * 생활팁이 폭증해도 행정 코어가 전체의 이 비율 아래로 안 내려가게 발굴·생성을 우선한다.
    */
   pillarMinShare: {
@@ -69,6 +70,44 @@ export const automationConfig = {
 
   /** 하루 최대 생성 개수 안전장치 — 실수로 API 비용이 폭주하는 것을 막습니다 */
   hardDailyLimit: 15,
+
+  /** 출처 링크 목록은 AI 키 없이 수집·갱신·발행한다. 본문을 복제하지 않는다. */
+  research: {
+    timeoutMs: 20000,
+    retries: 2,
+    maxResponseBytes: 1500000,
+    recentDays: 45,
+    maxItemsPerSource: 8,
+    staleHours: 48,
+    seoraksan: {
+      terms: ["설악", "대청봉", "공룡능선", "흘림골", "주전골", "백담", "봉정암"],
+      sources: [
+        { id: "knps", label: "설악산국립공원", kind: "official", format: "knps",
+          url: "https://www.knps.or.kr/front/portal/visit/visitCourseMain.do?menuNo=7020091&parkId=120400",
+          home: "https://www.knps.or.kr/front/portal/visit/visitCourseMain.do?menuNo=7020091&parkId=120400",
+          linkHosts: ["www.knps.or.kr"] },
+        { id: "kma", label: "강원지방기상청", kind: "official", format: "kma",
+          url: "https://www.weather.go.kr/gangwon/html/main/index.jsp",
+          home: "https://www.weather.go.kr/gangwon/html/main/index.jsp",
+          linkHosts: ["www.weather.go.kr"] },
+        { id: "kado", label: "강원도민일보", kind: "news", format: "rss",
+          url: "https://www.kado.net/rss/allArticle.xml", home: "https://www.kado.net/",
+          linkHosts: ["www.kado.net"] },
+        { id: "knps-blog", label: "국립공원 공식 블로그", kind: "blog", format: "rss",
+          url: "https://rss.blog.naver.com/iloveknp.xml", home: "https://blog.naver.com/iloveknp",
+          linkHosts: ["blog.naver.com"] },
+        { id: "knps-tv", label: "국립공원TV", kind: "video", format: "atom",
+          url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCoW5Rhaw1Fh_du3tgJ89RMw",
+          home: "https://www.youtube.com/@knpspr", linkHosts: ["www.youtube.com"] },
+        { id: "santayou", label: "산타유 Santayou", kind: "video", format: "atom",
+          url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCqczCAKuF3_ls_HWsHkKXbg",
+          home: "https://www.youtube.com/channel/UCqczCAKuF3_ls_HWsHkKXbg", linkHosts: ["www.youtube.com"] },
+        { id: "sandasong", label: "산다송tv", kind: "video", format: "atom",
+          url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCNxI1eMWzx1HxbjhClxWREQ",
+          home: "https://www.youtube.com/channel/UCNxI1eMWzx1HxbjhClxWREQ", linkHosts: ["www.youtube.com"] },
+      ] as TopicSource[],
+    },
+  },
 } as const;
 
 /** 현재 발행 글 수에 맞는 램프 단계를 고릅니다 */

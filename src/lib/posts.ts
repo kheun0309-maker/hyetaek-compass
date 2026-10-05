@@ -3,6 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import type { Post, PostFrontmatter } from "./types";
 import type { CategorySlug } from "../../site.config";
+import { isPublished } from "./publication";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
 
@@ -36,6 +37,10 @@ function readPostFile(filename: string): Post | null {
     aiGenerated: fm.aiGenerated ?? false,
     reviewed: fm.reviewed ?? false,
     provider: fm.provider,
+    cover: fm.cover,
+    sources: fm.sources,
+    factCheckedAt: fm.factCheckedAt,
+    reviewMethod: fm.reviewMethod,
     slug: filename.replace(/\.mdx?$/, ""),
     body: content,
     readingMinutes: estimateReadingMinutes(content),
@@ -49,7 +54,7 @@ let cache: Post[] | null = null;
  * draft:true 인 글은 개발 모드에서만 보입니다 (프로덕션 빌드에서 자동 제외).
  */
 export function getAllPosts(): Post[] {
-  if (cache) return cache;
+  if (cache && process.env.NODE_ENV !== "development") return cache;
   if (!fs.existsSync(POSTS_DIR)) return [];
 
   const showDrafts = process.env.NODE_ENV === "development";
@@ -59,8 +64,8 @@ export function getAllPosts(): Post[] {
     .filter((f) => /\.mdx?$/.test(f))
     .map(readPostFile)
     .filter((p): p is Post => p !== null)
-    .filter((p) => showDrafts || !p.draft)
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .filter((p) => showDrafts || isPublished(p))
+    .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
 
   return cache;
 }

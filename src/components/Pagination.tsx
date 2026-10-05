@@ -5,6 +5,7 @@ interface PaginationProps {
   totalPages: number;
   /** 1페이지 URL. 2페이지부터는 `${basePath}/page/2` 형태가 됩니다. */
   basePath: string;
+  firstPagePath?: string;
 }
 
 /** 현재 페이지 주변 + 처음/끝만 보여주는 축약 페이지 번호 목록 */
@@ -19,10 +20,10 @@ function pageWindow(page: number, total: number): (number | "...")[] {
   return out;
 }
 
-export default function Pagination({ page, totalPages, basePath }: PaginationProps) {
+export default function Pagination({ page, totalPages, basePath, firstPagePath }: PaginationProps) {
   if (totalPages <= 1) return null;
 
-  const href = (n: number) => (n === 1 ? basePath || "/" : `${basePath}/page/${n}`);
+  const href = (n: number) => (n === 1 ? firstPagePath ?? (basePath || "/posts") : `${basePath}/page/${n}`);
 
   return (
     <nav className="pagination" aria-label="페이지 이동">

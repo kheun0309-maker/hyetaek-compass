@@ -8,6 +8,7 @@ import matter from "gray-matter";
 import { parseCsv } from "./csv";
 import { categories, type CategorySlug, type ContentPillar } from "../../site.config";
 import { automationConfig } from "../../automation.config";
+import { isPublished } from "../../src/lib/publication";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
 const CSV = path.join(process.cwd(), "data", "keywords.csv");
@@ -56,7 +57,7 @@ export function readInventory(): Inventory {
         if (data.title) titles.push(String(data.title));
         const cat = String(data.category ?? "");
         if (cat in byCategory) byCategory[cat]++;
-        if (data.draft !== true) published++;
+        if (isPublished(data)) published++;
       } catch {
         /* 깨진 파일은 무시 */
       }
@@ -127,7 +128,6 @@ export function pickKeywords(
 ): KeywordRow[] {
   if (!balance) return inv.pendingKeywords.slice(0, count);
 
-  const order = categoriesByNeed(inv);
   const buckets = new Map<string, KeywordRow[]>();
   for (const row of inv.pendingKeywords) {
     const list = buckets.get(row.category) ?? [];
@@ -136,18 +136,13 @@ export function pickKeywords(
   }
 
   const picked: KeywordRow[] = [];
-  // 라운드 로빈: 부족한 카테고리부터 한 개씩 돌아가며 뽑습니다.
-  let progressed = true;
-  while (picked.length < count && progressed) {
-    progressed = false;
-    for (const cat of order) {
-      if (picked.length >= count) break;
-      const list = buckets.get(cat);
-      if (list && list.length > 0) {
-        picked.push(list.shift()!);
-        progressed = true;
-      }
-    }
+  const projected = { ...inv, byCategory: { ...inv.byCategory } };
+  // 한 건 선택할 때마다 비중을 다시 계산한다. 고정 라운드로빈은 최소 비중을 보장하지 못한다.
+  while (picked.length < count) {
+    const cat = categoriesByNeed(projected).find((slug) => (buckets.get(slug)?.length ?? 0) > 0);
+    if (!cat) break;
+    picked.push(buckets.get(cat)!.shift()!);
+    projected.byCategory[cat] = (projected.byCategory[cat] ?? 0) + 1;
   }
 
   return picked;

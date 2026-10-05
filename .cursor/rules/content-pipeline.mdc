@@ -37,15 +37,19 @@ content/posts ──┼─▶ discover.ts ─▶ data/keywords.csv (status="")
 | 기둥 | 카테고리 | 프롬프트 |
 |---|---|---|
 | admin (행정 코어) | subsidy, welfare, housing, health, tax, admin | 자격·신청·서류 구조 |
-| tips | digital, life | funissu형 따라 하기 |
+| tips | digital, life, travel | 따라 하기 / 여행 준비·공식 확인 |
 | money | money | 절약·할인 확인 방법 (단정 금액 금지) |
 
 생활팁이 늘어도 `automation.config.ts`의 `pillarMinShare.admin` 때문에 행정 코어가 우선 발굴됩니다.
 
 ## 3. 초안과 발행
 
-- `draft: true` 글은 `src/lib/posts.ts`의 `getAllPosts()`가 프로덕션에서 제외한다.
-- `reviewed: false`인 초안을 자동 발행하지 않는다. `npm run review -- --publish <slug>`가 사람 검토 단계다.
+- 공개 여부는 `src/lib/publication.ts` 한 곳에서 판단한다. 초안과 `aiGenerated:true`·미검토 글을 빌드·검색·사이트맵에서 제외한다.
+- AI 해설은 자동 발행하지 않는다. `npm run review -- --publish <slug>`는 실제 검토를 끝낸 후에만 실행한다.
+- 공개 RSS·공식 공지의 **제목·게시일·원문 링크 목록**은 `reviewMethod:source-feed`, `aiGenerated:false`로 자동 갱신한다. `reviewed:true`로 사실 확인을 가장하지 않는다. 기사·블로그 본문은 복제하지 않는다.
+- API 키가 없는 기본 예약 실행도 출처 수집·검증·빌드·GitHub 저장이 가능해야 한다. AI 예약 생성은 저장소 변수로 별도 활성화한다.
+- 수집 장애는 마지막 성공 목록·시각을 유지하고 표기한다. 모든 공식 출처가 실패하면 발행 글 갱신을 중단한다. 오래된 목록은 열람 시점에서도 감지한다.
+- 사진은 저작자·이용허락·촬영일을 확인하고 첨부한다. 자료 사진을 올해 현황으로 표시하지 않는다.
 - `npm run pipeline -- --dry`로 계획만 볼 수 있다. 불필요한 API 호출을 하지 않는다.
 
 ## 4. 비밀값
@@ -65,3 +69,4 @@ content/posts ──┼─▶ discover.ts ─▶ data/keywords.csv (status="")
 |---|---|---|
 | 2026-08-23 | 삼기둥(admin/tips/money) + digital/life/money 카테고리. 프롬프트 분기·pillarMinShare | `site.config.ts`, `prompts.ts`, `automation.config.ts` |
 | 2026-08-23 | PROJECT-MAP 파이프라인 규칙을 개발방법론 룰로 고정 | `.cursor/rules/content-pipeline.mdc` |
+| 2026-10-05 | API 키 누락·생성 실패가 성공으로 끝나던 문제 수정. 소식 링크 자동 갱신과 AI 검토를 분리; 키워드 done 처리·삼기둥 재계산·dry 무호출·HTML/실행 링크 차단 | `source-feed.ts`, `publication.ts`, `generate.ts`, `inventory.ts`, `content.yml`, `markdown.ts` |

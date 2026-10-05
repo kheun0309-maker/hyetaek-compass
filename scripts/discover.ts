@@ -95,6 +95,7 @@ async function main() {
 
   const known = new Set(inv.allKeywords.map((k) => k.keyword));
   const collected: Found[] = [];
+  let failed = 0;
 
   for (const slug of targets) {
     const cat = categoryMap[slug];
@@ -131,12 +132,14 @@ async function main() {
       collected.push(...found);
       console.log(`${found.length}개`);
     } catch (err) {
+      failed++;
       console.log(`실패: ${err instanceof Error ? err.message : String(err)}`);
     }
   }
 
   if (collected.length === 0) {
     console.log("\n새로 추가된 키워드가 없습니다.");
+    if (failed > 0) process.exitCode = 1;
     return;
   }
 

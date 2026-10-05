@@ -18,7 +18,8 @@ import "dotenv/config";
 
 import { createProvider } from "./lib/providers/index";
 import { SYSTEM_PROMPT, buildUserPrompt } from "./lib/prompts";
-import { parseArgs, str, num } from "./lib/cli";
+import { parseArgs, str, num, boundedCount } from "./lib/cli";
+import { koreaDate } from "./lib/source-feed";
 import { readInventory, pickKeywords, markKeywordsDone } from "./lib/inventory";
 import { automationConfig } from "../automation.config";
 import { categories } from "../site.config";
@@ -60,7 +61,7 @@ function slugify(input: string, fallback: string): string {
 }
 
 function today(): string {
-  return new Date().toISOString().slice(0, 10);
+  return koreaDate();
 }
 
 function loadJobs(args: Record<string, string | boolean>): Job[] {
@@ -79,7 +80,7 @@ function loadJobs(args: Record<string, string | boolean>): Job[] {
   // --balance false 를 주지 않으면 글이 적은 카테고리부터 균형 있게 뽑습니다.
   const inv = readInventory();
   const balance = args.balance !== "false" && automationConfig.balanceCategories;
-  const limit = num(args.limit, inv.pendingKeywords.length);
+  const limit = boundedCount(args.limit, inv.pendingKeywords.length, automationConfig.hardDailyLimit);
 
   return pickKeywords(inv, limit, balance).map((r) => ({
     keyword: r.keyword,
@@ -93,13 +94,16 @@ async function main() {
   const args = parseArgs();
   const dry = args.dry === true;
 
-  const provider = createProvider(str(args.provider));
   const jobs = loadJobs(args);
 
   if (jobs.length === 0) {
     console.log("처리할 키워드가 없습니다.");
     return;
   }
+
+  // dry는 실제 API를 호출하지 않는다.
+  if (dry) { console.log(jobs.map((job) => `[${job.category}] ${job.keyword}`).join("\n")); return; }
+  const provider = createProvider(str(args.provider));
 
   fs.mkdirSync(POSTS_DIR, { recursive: true });
 
@@ -176,6 +180,8 @@ async function main() {
   }
 
   console.log(`\n완료: 성공 ${ok} / 실패 ${failed}`);
+  markKeywordsDone(completed);
+  if (failed > 0) process.exitCode = 1;
   if (ok > 0 && !dry) {
     console.log(
       "\n다음 단계:\n" +

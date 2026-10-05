@@ -6,6 +6,7 @@ import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { renderMarkdown } from "@/lib/markdown";
 import AdSlot from "@/components/AdSlot";
 import Toc from "@/components/Toc";
+import PhotoCredit from "@/components/PhotoCredit";
 import { JsonLd } from "@/components/ThirdParty";
 import {
   pageMetadata,
@@ -13,7 +14,7 @@ import {
   breadcrumbJsonLd,
   faqJsonLd,
 } from "@/lib/seo";
-import { categoryMap, siteConfig } from "../../../site.config";
+import { categoryMap, siteConfig, isAdminCategory } from "../../../site.config";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -108,10 +109,12 @@ export default async function PostPage({ params }: { params: Params }) {
       </div>
 
       <p className="notice">
-        지원 금액·소득 기준·신청 기간은 해마다 바뀝니다. 신청 전에 반드시{" "}
-        <strong>복지로, 정부24 등 공식 홈페이지</strong>에서 최신 기준을 확인해
-        주세요.
+        {post.category === "travel" ? "운행·요금·탐방로 통제·예약 조건은 바뀔 수 있습니다. 출발 당일 공원과 운영사 공식 안내를 확인하세요." : isAdminCategory(post.category) ? "지원 금액·소득 기준·신청 기간은 해마다 바뀝니다. 신청 전에 소관 기관 공식 홈페이지에서 최신 기준을 확인하세요." : "앱 메뉴·요금·이용 조건은 변경될 수 있습니다. 이용 전에 서비스의 공식 안내를 확인하세요."}
       </p>
+
+      {post.reviewMethod === "source-feed" && <p className="article-verification">원문 제목·게시일을 자동 수집한 목록입니다. 기사·영상 내용을 사실 확인한 해설과는 구분해 읽어주세요.</p>}
+      {post.factCheckedAt && <p className="article-verification">본문 정보 확인 기준: {post.factCheckedAt}{post.tags?.includes("설악산") && <> · 최신 소식은 <Link href="/seoraksan">설악산 특집</Link>에서 확인</>}</p>}
+      {post.thumbnail && post.cover && <figure className="article-cover"><img src={post.thumbnail} alt={post.cover.alt} width={1280} height={853} /><PhotoCredit cover={post.cover} /></figure>}
 
       {/* 첫 화면 배너 — 뷰어빌리티가 가장 높은 지면이라 lazy를 끕니다 */}
       {adCfg.showTopBanner && <AdSlot format="display" lazy={false} />}
@@ -136,6 +139,8 @@ export default async function PostPage({ params }: { params: Params }) {
           ))}
         </section>
       )}
+
+      {(post.sources?.length ?? 0) > 0 && <section className="article-sources"><h2>확인한 출처</h2><ul>{post.sources!.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a></li>)}</ul></section>}
 
       {(post.tags?.length ?? 0) > 0 && (
         <div className="tags">

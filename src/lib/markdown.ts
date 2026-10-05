@@ -2,7 +2,6 @@ import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
-import rehypeRaw from "rehype-raw";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 import type { Heading } from "./types";
@@ -21,14 +20,34 @@ function textOf(node: HastNode): string {
   return (node.children ?? []).map(textOf).join("");
 }
 
+/** 외부 제목·AI 초안의 링크가 실행 가능한 URL이 되지 않게 한다. HTML 원문은 해석하지 않는다. */
+function safeLinks() {
+  return (tree: HastNode) => {
+    const walk = (node: HastNode) => {
+      if (node.properties) {
+        for (const key of ["href", "src"]) {
+          const value = node.properties[key];
+          if (typeof value !== "string") continue;
+          const normalized = value.replace(/[\u0000-\u0020\u007f]/g, "");
+          const scheme = /^([a-z][a-z\d+.-]*):/i.exec(normalized)?.[1]?.toLowerCase();
+          const allowed = key === "href" ? ["http", "https", "mailto", "tel"] : ["http", "https"];
+          if (scheme && !allowed.includes(scheme)) delete node.properties[key];
+        }
+      }
+      node.children?.forEach(walk);
+    };
+    walk(tree);
+  };
+}
+
 const toHast = unified()
   .use(remarkParse)
   .use(remarkGfm)
-  .use(remarkRehype, { allowDangerousHtml: true })
-  .use(rehypeRaw)
-  .use(rehypeSlug);
+  .use(remarkRehype)
+  .use(rehypeSlug, { prefix: "heading-" })
+  .use(safeLinks);
 
-const toHtml = unified().use(rehypeStringify, { allowDangerousHtml: true });
+const toHtml = unified().use(rehypeStringify);
 
 export interface RenderResult {
   /** 광고 삽입 지점으로 분할된 HTML 조각들 */
