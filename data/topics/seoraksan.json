@@ -1,6 +1,6 @@
 {
   "topic": "seoraksan",
-  "collectedAt": "2026-10-08T06:05:27.151Z",
+  "collectedAt": "2026-10-09T06:09:45.391Z",
   "items": [
     {
       "title": "[설악산] 10. 7. 일일 산행 기상정보",
@@ -191,49 +191,49 @@
     {
       "sourceId": "knps",
       "status": "ok",
-      "attemptedAt": "2026-10-08T06:05:27.151Z",
-      "checkedAt": "2026-10-08T06:05:27.151Z",
+      "attemptedAt": "2026-10-09T06:09:45.391Z",
+      "checkedAt": "2026-10-09T06:09:45.391Z",
       "count": 8
     },
     {
       "sourceId": "kma",
       "status": "ok",
-      "attemptedAt": "2026-10-08T06:05:27.151Z",
-      "checkedAt": "2026-10-08T06:05:27.151Z",
+      "attemptedAt": "2026-10-09T06:09:45.391Z",
+      "checkedAt": "2026-10-09T06:09:45.391Z",
       "count": 1
     },
     {
       "sourceId": "kado",
       "status": "ok",
-      "attemptedAt": "2026-10-08T06:05:27.151Z",
-      "checkedAt": "2026-10-08T06:05:27.151Z",
+      "attemptedAt": "2026-10-09T06:09:45.391Z",
+      "checkedAt": "2026-10-09T06:09:45.391Z",
       "count": 0
     },
     {
       "sourceId": "knps-blog",
       "status": "ok",
-      "attemptedAt": "2026-10-08T06:05:27.151Z",
-      "checkedAt": "2026-10-08T06:05:27.151Z",
+      "attemptedAt": "2026-10-09T06:09:45.391Z",
+      "checkedAt": "2026-10-09T06:09:45.391Z",
       "count": 1
     },
     {
       "sourceId": "knps-tv",
       "status": "error",
-      "attemptedAt": "2026-10-08T06:05:27.151Z",
+      "attemptedAt": "2026-10-09T06:09:45.391Z",
       "checkedAt": "2026-10-05T01:31:43.449Z",
       "count": 1
     },
     {
       "sourceId": "santayou",
       "status": "error",
-      "attemptedAt": "2026-10-08T06:05:27.151Z",
+      "attemptedAt": "2026-10-09T06:09:45.391Z",
       "checkedAt": "2026-10-05T01:43:25.603Z",
       "count": 4
     },
     {
       "sourceId": "sandasong",
       "status": "error",
-      "attemptedAt": "2026-10-08T06:05:27.151Z",
+      "attemptedAt": "2026-10-09T06:09:45.391Z",
       "checkedAt": "2026-10-05T01:31:43.449Z",
       "count": 8
     }
