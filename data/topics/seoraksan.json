@@ -1,7 +1,23 @@
 {
   "topic": "seoraksan",
-  "collectedAt": "2026-10-12T05:59:32.537Z",
+  "collectedAt": "2026-10-13T06:48:04.600Z",
   "items": [
+    {
+      "title": "[설악산] 10. 13. 일일 산행 기상정보",
+      "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002181",
+      "publishedAt": "2026-10-13",
+      "sourceId": "knps",
+      "sourceName": "설악산국립공원",
+      "kind": "official"
+    },
+    {
+      "title": "설악산 봉정암 단풍",
+      "url": "https://www.youtube.com/shorts/Jh98kZTVpiI",
+      "publishedAt": "2026-10-08",
+      "sourceId": "santayou",
+      "sourceName": "산타유 Santayou",
+      "kind": "video"
+    },
     {
       "title": "[설악산] 10. 7. 일일 산행 기상정보",
       "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002166",
@@ -9,6 +25,14 @@
       "sourceId": "knps",
       "sourceName": "설악산국립공원",
       "kind": "official"
+    },
+    {
+      "title": "설악산 공룡능선 단풍",
+      "url": "https://www.youtube.com/shorts/rmzq9HJlE1c",
+      "publishedAt": "2026-10-07",
+      "sourceId": "santayou",
+      "sourceName": "산타유 Santayou",
+      "kind": "video"
     },
     {
       "title": "[설악산] 10. 6. 일일 산행 기상정보",
@@ -54,14 +78,6 @@
       "title": "[설악산] 10. 2. 일일 산행 기상정보",
       "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002152",
       "publishedAt": "2026-10-02",
-      "sourceId": "knps",
-      "sourceName": "설악산국립공원",
-      "kind": "official"
-    },
-    {
-      "title": "[설악산] 10. 1. 일일 산행 기상정보",
-      "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002149",
-      "publishedAt": "2026-10-01",
       "sourceId": "knps",
       "sourceName": "설악산국립공원",
       "kind": "official"
@@ -183,49 +199,49 @@
     {
       "sourceId": "knps",
       "status": "ok",
-      "attemptedAt": "2026-10-12T05:59:32.537Z",
-      "checkedAt": "2026-10-12T05:59:32.537Z",
+      "attemptedAt": "2026-10-13T06:48:04.600Z",
+      "checkedAt": "2026-10-13T06:48:04.600Z",
       "count": 7
     },
     {
       "sourceId": "kma",
       "status": "ok",
-      "attemptedAt": "2026-10-12T05:59:32.537Z",
-      "checkedAt": "2026-10-12T05:59:32.537Z",
+      "attemptedAt": "2026-10-13T06:48:04.600Z",
+      "checkedAt": "2026-10-13T06:48:04.600Z",
       "count": 1
     },
     {
       "sourceId": "kado",
       "status": "ok",
-      "attemptedAt": "2026-10-12T05:59:32.537Z",
-      "checkedAt": "2026-10-12T05:59:32.537Z",
+      "attemptedAt": "2026-10-13T06:48:04.600Z",
+      "checkedAt": "2026-10-13T06:48:04.600Z",
       "count": 0
     },
     {
       "sourceId": "knps-blog",
       "status": "ok",
-      "attemptedAt": "2026-10-12T05:59:32.537Z",
-      "checkedAt": "2026-10-12T05:59:32.537Z",
+      "attemptedAt": "2026-10-13T06:48:04.600Z",
+      "checkedAt": "2026-10-13T06:48:04.600Z",
       "count": 1
     },
     {
       "sourceId": "knps-tv",
       "status": "error",
-      "attemptedAt": "2026-10-12T05:59:32.537Z",
+      "attemptedAt": "2026-10-13T06:48:04.600Z",
       "checkedAt": "2026-10-05T01:31:43.449Z",
       "count": 1
     },
     {
       "sourceId": "santayou",
-      "status": "error",
-      "attemptedAt": "2026-10-12T05:59:32.537Z",
-      "checkedAt": "2026-10-05T01:43:25.603Z",
-      "count": 4
+      "status": "ok",
+      "attemptedAt": "2026-10-13T06:48:04.600Z",
+      "checkedAt": "2026-10-13T06:48:04.600Z",
+      "count": 6
     },
     {
       "sourceId": "sandasong",
       "status": "error",
-      "attemptedAt": "2026-10-12T05:59:32.537Z",
+      "attemptedAt": "2026-10-13T06:48:04.600Z",
       "checkedAt": "2026-10-05T01:31:43.449Z",
       "count": 8
     }
