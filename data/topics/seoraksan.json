@@ -1,6 +1,6 @@
 {
   "topic": "seoraksan",
-  "collectedAt": "2026-10-13T06:48:04.600Z",
+  "collectedAt": "2026-10-14T04:55:06.346Z",
   "items": [
     {
       "title": "[설악산] 10. 13. 일일 산행 기상정보",
@@ -199,49 +199,49 @@
     {
       "sourceId": "knps",
       "status": "ok",
-      "attemptedAt": "2026-10-13T06:48:04.600Z",
-      "checkedAt": "2026-10-13T06:48:04.600Z",
+      "attemptedAt": "2026-10-14T04:55:06.346Z",
+      "checkedAt": "2026-10-14T04:55:06.346Z",
       "count": 7
     },
     {
       "sourceId": "kma",
       "status": "ok",
-      "attemptedAt": "2026-10-13T06:48:04.600Z",
-      "checkedAt": "2026-10-13T06:48:04.600Z",
+      "attemptedAt": "2026-10-14T04:55:06.346Z",
+      "checkedAt": "2026-10-14T04:55:06.346Z",
       "count": 1
     },
     {
       "sourceId": "kado",
       "status": "ok",
-      "attemptedAt": "2026-10-13T06:48:04.600Z",
-      "checkedAt": "2026-10-13T06:48:04.600Z",
+      "attemptedAt": "2026-10-14T04:55:06.346Z",
+      "checkedAt": "2026-10-14T04:55:06.346Z",
       "count": 0
     },
     {
       "sourceId": "knps-blog",
       "status": "ok",
-      "attemptedAt": "2026-10-13T06:48:04.600Z",
-      "checkedAt": "2026-10-13T06:48:04.600Z",
+      "attemptedAt": "2026-10-14T04:55:06.346Z",
+      "checkedAt": "2026-10-14T04:55:06.346Z",
       "count": 1
     },
     {
       "sourceId": "knps-tv",
       "status": "error",
-      "attemptedAt": "2026-10-13T06:48:04.600Z",
+      "attemptedAt": "2026-10-14T04:55:06.346Z",
       "checkedAt": "2026-10-05T01:31:43.449Z",
       "count": 1
     },
     {
       "sourceId": "santayou",
-      "status": "ok",
-      "attemptedAt": "2026-10-13T06:48:04.600Z",
+      "status": "error",
+      "attemptedAt": "2026-10-14T04:55:06.346Z",
       "checkedAt": "2026-10-13T06:48:04.600Z",
       "count": 6
     },
     {
       "sourceId": "sandasong",
       "status": "error",
-      "attemptedAt": "2026-10-13T06:48:04.600Z",
+      "attemptedAt": "2026-10-14T04:55:06.346Z",
       "checkedAt": "2026-10-05T01:31:43.449Z",
       "count": 8
     }
