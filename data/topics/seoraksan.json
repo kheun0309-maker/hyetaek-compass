@@ -1,7 +1,15 @@
 {
   "topic": "seoraksan",
-  "collectedAt": "2026-10-15T04:40:32.762Z",
+  "collectedAt": "2026-10-16T04:33:33.910Z",
   "items": [
+    {
+      "title": "설악권 4개 시군의회협의회 함용빈 초대 회장 추대",
+      "url": "https://www.kado.net/news/articleView.html?idxno=2078540",
+      "publishedAt": "2026-10-16",
+      "sourceId": "kado",
+      "sourceName": "강원도민일보",
+      "kind": "news"
+    },
     {
       "title": "[설악산] 10. 15. 일일 산행 기상정보",
       "url": "https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002185",
@@ -199,49 +207,49 @@
     {
       "sourceId": "knps",
       "status": "ok",
-      "attemptedAt": "2026-10-15T04:40:32.762Z",
-      "checkedAt": "2026-10-15T04:40:32.762Z",
+      "attemptedAt": "2026-10-16T04:33:33.910Z",
+      "checkedAt": "2026-10-16T04:33:33.910Z",
       "count": 7
     },
     {
       "sourceId": "kma",
       "status": "ok",
-      "attemptedAt": "2026-10-15T04:40:32.762Z",
-      "checkedAt": "2026-10-15T04:40:32.762Z",
+      "attemptedAt": "2026-10-16T04:33:33.910Z",
+      "checkedAt": "2026-10-16T04:33:33.910Z",
       "count": 1
     },
     {
       "sourceId": "kado",
       "status": "ok",
-      "attemptedAt": "2026-10-15T04:40:32.762Z",
-      "checkedAt": "2026-10-15T04:40:32.762Z",
-      "count": 0
+      "attemptedAt": "2026-10-16T04:33:33.910Z",
+      "checkedAt": "2026-10-16T04:33:33.910Z",
+      "count": 1
     },
     {
       "sourceId": "knps-blog",
       "status": "ok",
-      "attemptedAt": "2026-10-15T04:40:32.762Z",
-      "checkedAt": "2026-10-15T04:40:32.762Z",
+      "attemptedAt": "2026-10-16T04:33:33.910Z",
+      "checkedAt": "2026-10-16T04:33:33.910Z",
       "count": 1
     },
     {
       "sourceId": "knps-tv",
       "status": "error",
-      "attemptedAt": "2026-10-15T04:40:32.762Z",
+      "attemptedAt": "2026-10-16T04:33:33.910Z",
       "checkedAt": "2026-10-05T01:31:43.449Z",
       "count": 1
     },
     {
       "sourceId": "santayou",
       "status": "error",
-      "attemptedAt": "2026-10-15T04:40:32.762Z",
+      "attemptedAt": "2026-10-16T04:33:33.910Z",
       "checkedAt": "2026-10-13T06:48:04.600Z",
       "count": 6
     },
     {
       "sourceId": "sandasong",
       "status": "error",
-      "attemptedAt": "2026-10-15T04:40:32.762Z",
+      "attemptedAt": "2026-10-16T04:33:33.910Z",
       "checkedAt": "2026-10-05T01:31:43.449Z",
       "count": 8
     }
