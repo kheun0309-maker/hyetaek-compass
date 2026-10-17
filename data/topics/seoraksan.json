@@ -1,14 +1,14 @@
 {
   "topic": "seoraksan",
-  "collectedAt": "2026-10-16T04:33:33.910Z",
+  "collectedAt": "2026-10-17T04:27:28.698Z",
   "items": [
     {
-      "title": "설악권 4개 시군의회협의회 함용빈 초대 회장 추대",
-      "url": "https://www.kado.net/news/articleView.html?idxno=2078540",
+      "title": "[설악산국립공원] 대청봉과 천불동계곡 까지, 가을 산행 추천 코스",
+      "url": "https://blog.naver.com/iloveknp/224439113798",
       "publishedAt": "2026-10-16",
-      "sourceId": "kado",
-      "sourceName": "강원도민일보",
-      "kind": "news"
+      "sourceId": "knps-blog",
+      "sourceName": "국립공원 공식 블로그",
+      "kind": "blog"
     },
     {
       "title": "[설악산] 10. 15. 일일 산행 기상정보",
@@ -185,73 +185,57 @@
       "sourceId": "sandasong",
       "sourceName": "산다송tv",
       "kind": "video"
-    },
-    {
-      "title": "징크스?! #설악산",
-      "url": "https://www.youtube.com/shorts/-k3CTRWAbAI",
-      "publishedAt": "2026-09-01",
-      "sourceId": "sandasong",
-      "sourceName": "산다송tv",
-      "kind": "video"
-    },
-    {
-      "title": "#소청대피소 #설악산",
-      "url": "https://www.youtube.com/shorts/wQWZAZXxzzk",
-      "publishedAt": "2026-09-01",
-      "sourceId": "sandasong",
-      "sourceName": "산다송tv",
-      "kind": "video"
     }
   ],
   "checks": [
     {
       "sourceId": "knps",
       "status": "ok",
-      "attemptedAt": "2026-10-16T04:33:33.910Z",
-      "checkedAt": "2026-10-16T04:33:33.910Z",
+      "attemptedAt": "2026-10-17T04:27:28.698Z",
+      "checkedAt": "2026-10-17T04:27:28.698Z",
       "count": 7
     },
     {
       "sourceId": "kma",
       "status": "ok",
-      "attemptedAt": "2026-10-16T04:33:33.910Z",
-      "checkedAt": "2026-10-16T04:33:33.910Z",
+      "attemptedAt": "2026-10-17T04:27:28.698Z",
+      "checkedAt": "2026-10-17T04:27:28.698Z",
       "count": 1
     },
     {
       "sourceId": "kado",
       "status": "ok",
-      "attemptedAt": "2026-10-16T04:33:33.910Z",
-      "checkedAt": "2026-10-16T04:33:33.910Z",
-      "count": 1
+      "attemptedAt": "2026-10-17T04:27:28.698Z",
+      "checkedAt": "2026-10-17T04:27:28.698Z",
+      "count": 0
     },
     {
       "sourceId": "knps-blog",
       "status": "ok",
-      "attemptedAt": "2026-10-16T04:33:33.910Z",
-      "checkedAt": "2026-10-16T04:33:33.910Z",
-      "count": 1
+      "attemptedAt": "2026-10-17T04:27:28.698Z",
+      "checkedAt": "2026-10-17T04:27:28.698Z",
+      "count": 2
     },
     {
       "sourceId": "knps-tv",
       "status": "error",
-      "attemptedAt": "2026-10-16T04:33:33.910Z",
+      "attemptedAt": "2026-10-17T04:27:28.698Z",
       "checkedAt": "2026-10-05T01:31:43.449Z",
       "count": 1
     },
     {
       "sourceId": "santayou",
       "status": "error",
-      "attemptedAt": "2026-10-16T04:33:33.910Z",
+      "attemptedAt": "2026-10-17T04:27:28.698Z",
       "checkedAt": "2026-10-13T06:48:04.600Z",
       "count": 6
     },
     {
       "sourceId": "sandasong",
       "status": "error",
-      "attemptedAt": "2026-10-16T04:33:33.910Z",
+      "attemptedAt": "2026-10-17T04:27:28.698Z",
       "checkedAt": "2026-10-05T01:31:43.449Z",
-      "count": 8
+      "count": 6
     }
   ]
 }

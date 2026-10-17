@@ -3,7 +3,7 @@ title: '설악산 최근 소식 모음, 공식 공지·유튜브·블로그'
 description: '설악산국립공원 공지, 지역신문, 유튜브 산행 영상과 블로그 글을 게시일·출처와 함께 확인하세요. 교통·단풍 안내로 이어집니다.'
 category: travel
 date: '2026-10-05'
-updated: '2026-10-16'
+updated: '2026-10-17'
 tags:
   - 설악산
   - 국립공원
@@ -15,7 +15,7 @@ aiGenerated: false
 reviewed: false
 reviewMethod: source-feed
 ---
-설악산 여행 전에 확인할 공지, 신문 소식, 산행 영상과 블로그 글의 원문을 모았습니다. **2026-10-16 수집 기준**입니다. 제목과 게시일을 안내하며, 기사·영상 본문을 전재하거나 영상 속 장면을 현재 상황으로 단정하지 않습니다.
+설악산 여행 전에 확인할 공지, 신문 소식, 산행 영상과 블로그 글의 원문을 모았습니다. **2026-10-17 수집 기준**입니다. 제목과 게시일을 안내하며, 기사·영상 본문을 전재하거나 영상 속 장면을 현재 상황으로 단정하지 않습니다.
 
 [설악산 특집 한눈에 보기](/seoraksan) · [교통편 정리](/seoraksan-transport-guide) · [단풍·코스 안내](/seoraksan-autumn-guide)
 
@@ -34,7 +34,7 @@ reviewMethod: source-feed
 
 ## 신문·지역 소식
 
-- 2026-10-16 · [설악권 4개 시군의회협의회 함용빈 초대 회장 추대](https://www.kado.net/news/articleView.html?idxno=2078540) — 강원도민일보
+현재 수집 범위에서 날짜가 확인되는 최근 자료가 없습니다. 아래 특집에서 공식 채널과 검색 링크를 확인하세요.
 
 ## 최근 유튜브 산행 영상
 
@@ -51,11 +51,10 @@ reviewMethod: source-feed
 - 2026-09-07 · [설악산 공룡능선 노인봉 올라가는 방법](https://www.youtube.com/shorts/dYQKB-60R2U) — 산타유 Santayou
 - 2026-09-04 · [#공룡능선 #설악산](https://www.youtube.com/shorts/a7jnVdedwkA) — 산다송tv
 - 2026-09-02 · [공룡, 화채능선, 대청봉까지](https://www.youtube.com/shorts/aVWql28Kri0) — 산다송tv
-- 2026-09-01 · [징크스?! #설악산](https://www.youtube.com/shorts/-k3CTRWAbAI) — 산다송tv
-- 2026-09-01 · [#소청대피소 #설악산](https://www.youtube.com/shorts/wQWZAZXxzzk) — 산다송tv
 
 ## 블로그 탐방 기록
 
+- 2026-10-16 · [설악산국립공원 대청봉과 천불동계곡 까지, 가을 산행 추천 코스](https://blog.naver.com/iloveknp/224439113798) — 국립공원 공식 블로그
 - 2026-09-18 · [설악산국립공원 점봉산 곰배령 초가을 야생화 / 금강초롱꽃, 고려엉겅퀴, 곰취꽃, 까실쑥부쟁이](https://blog.naver.com/iloveknp/224416067751) — 국립공원 공식 블로그
 
 ## 방문 직전 확인 순서
