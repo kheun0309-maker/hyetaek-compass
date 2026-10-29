@@ -1,11 +1,11 @@
 {
   "topic": "seoraksan",
-  "collectedAt": "2026-10-28T05:43:14.155Z",
+  "collectedAt": "2026-10-29T05:49:37.410Z",
   "items": [
     {
-      "title": "설악산서 낙상한 70대 등산객 구한 군무원…응급처치부터 구조까지",
-      "url": "https://www.kado.net/news/articleView.html?idxno=2081019",
-      "publishedAt": "2026-10-28",
+      "title": "설악산 대청봉에 ‘첫눈’…지난해보다 9일 늦었다",
+      "url": "https://www.kado.net/news/articleView.html?idxno=2081328",
+      "publishedAt": "2026-10-29",
       "sourceId": "kado",
       "sourceName": "강원도민일보",
       "kind": "news"
@@ -175,49 +175,49 @@
     {
       "sourceId": "knps",
       "status": "ok",
-      "attemptedAt": "2026-10-28T05:43:14.155Z",
-      "checkedAt": "2026-10-28T05:43:14.155Z",
+      "attemptedAt": "2026-10-29T05:49:37.410Z",
+      "checkedAt": "2026-10-29T05:49:37.410Z",
       "count": 8
     },
     {
       "sourceId": "kma",
       "status": "ok",
-      "attemptedAt": "2026-10-28T05:43:14.155Z",
-      "checkedAt": "2026-10-28T05:43:14.155Z",
+      "attemptedAt": "2026-10-29T05:49:37.410Z",
+      "checkedAt": "2026-10-29T05:49:37.410Z",
       "count": 1
     },
     {
       "sourceId": "kado",
       "status": "ok",
-      "attemptedAt": "2026-10-28T05:43:14.155Z",
-      "checkedAt": "2026-10-28T05:43:14.155Z",
+      "attemptedAt": "2026-10-29T05:49:37.410Z",
+      "checkedAt": "2026-10-29T05:49:37.410Z",
       "count": 1
     },
     {
       "sourceId": "knps-blog",
       "status": "ok",
-      "attemptedAt": "2026-10-28T05:43:14.155Z",
-      "checkedAt": "2026-10-28T05:43:14.155Z",
+      "attemptedAt": "2026-10-29T05:49:37.410Z",
+      "checkedAt": "2026-10-29T05:49:37.410Z",
       "count": 2
     },
     {
       "sourceId": "knps-tv",
       "status": "error",
-      "attemptedAt": "2026-10-28T05:43:14.155Z",
+      "attemptedAt": "2026-10-29T05:49:37.410Z",
       "checkedAt": "2026-10-05T01:31:43.449Z",
       "count": 1
     },
     {
       "sourceId": "santayou",
       "status": "error",
-      "attemptedAt": "2026-10-28T05:43:14.155Z",
+      "attemptedAt": "2026-10-29T05:49:37.410Z",
       "checkedAt": "2026-10-13T06:48:04.600Z",
       "count": 5
     },
     {
       "sourceId": "sandasong",
       "status": "error",
-      "attemptedAt": "2026-10-28T05:43:14.155Z",
+      "attemptedAt": "2026-10-29T05:49:37.410Z",
       "checkedAt": "2026-10-05T01:31:43.449Z",
       "count": 3
     }
