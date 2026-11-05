@@ -3,7 +3,7 @@ title: '설악산 최근 소식 모음, 공식 공지·유튜브·블로그'
 description: '설악산국립공원 공지, 지역신문, 유튜브 산행 영상과 블로그 글을 게시일·출처와 함께 확인하세요. 교통·단풍 안내로 이어집니다.'
 category: travel
 date: '2026-10-05'
-updated: '2026-11-04'
+updated: '2026-11-05'
 tags:
   - 설악산
   - 국립공원
@@ -15,7 +15,7 @@ aiGenerated: false
 reviewed: false
 reviewMethod: source-feed
 ---
-설악산 여행 전에 확인할 공지, 신문 소식, 산행 영상과 블로그 글의 원문을 모았습니다. **2026-11-04 수집 기준**입니다. 제목과 게시일을 안내하며, 기사·영상 본문을 전재하거나 영상 속 장면을 현재 상황으로 단정하지 않습니다.
+설악산 여행 전에 확인할 공지, 신문 소식, 산행 영상과 블로그 글의 원문을 모았습니다. **2026-11-05 수집 기준**입니다. 제목과 게시일을 안내하며, 기사·영상 본문을 전재하거나 영상 속 장면을 현재 상황으로 단정하지 않습니다.
 
 [설악산 특집 한눈에 보기](/seoraksan) · [교통편 정리](/seoraksan-transport-guide) · [단풍·코스 안내](/seoraksan-autumn-guide)
 
@@ -23,19 +23,19 @@ reviewMethod: source-feed
 
 ## 공식 공지·기상 소식
 
+- 2026-11-05 · [설악산 11. 5. 일일 산행 기상정보](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002229) — 설악산국립공원
 - 2026-11-04 · [설악산 11. 4. 일일 산행 기상정보](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002228) — 설악산국립공원
 - 2026-11-03 · [설악산 11. 3. 일일 산행 기상정보](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002227) — 설악산국립공원
 - 2026-10-30 · [설악산 2026년 가을철 설악산국립공원 탐방로 출입통제 공고](https://www.knps.or.kr/front/portal/open/pnewsDtl.do?menuNo=8000517&pnewsId=PNEWSM035275&searchParkId=120400&pnewsGrpCd=PNE01) — 설악산국립공원
 - 2026-10-30 · [설악산 10. 30. 일일 산행 기상정보](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002217) — 설악산국립공원
 - 2026-10-28 · [설악산 10. 28. 일일 산행 기상정보](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002213) — 설악산국립공원
-- 2026-10-26 · [설악산 10. 26. 일일 산행 기상정보](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002212) — 설악산국립공원
 - 2026-10-19 · [설악산 탐방로 임시개방 공고(은선도~청룡담)](https://www.knps.or.kr/front/portal/open/pnewsDtl.do?menuNo=8000517&pnewsId=PNEWSM035165&searchParkId=120400&pnewsGrpCd=PNE01) — 설악산국립공원
 - 2026-10-02 · [설악산 가을철 불법무질서행위 사전예고 집중단속 실시 공고](https://www.knps.or.kr/front/portal/open/pnewsDtl.do?menuNo=8000517&pnewsId=PNEWSM035033&searchParkId=120400&pnewsGrpCd=PNE01) — 설악산국립공원
 - 2026-09-28 · [보도자료 오늘(28일) 설악산 첫 단풍](https://www.weather.go.kr/gangwon/html/news/notice_view.jsp?pageNo=1&articleno=13415&boardId=press2) — 강원지방기상청
 
 ## 신문·지역 소식
 
-현재 수집 범위에서 날짜가 확인되는 최근 자료가 없습니다. 아래 특집에서 공식 채널과 검색 링크를 확인하세요.
+- 2026-11-05 · [인제 설악산배움터, 양구 지게마을서 생태·농촌체험 활동](https://www.kado.net/news/articleView.html?idxno=2082866) — 강원도민일보
 
 ## 최근 유튜브 산행 영상
 
