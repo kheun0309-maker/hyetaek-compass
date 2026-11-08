@@ -3,7 +3,7 @@ title: '설악산 최근 소식 모음, 공식 공지·유튜브·블로그'
 description: '설악산국립공원 공지, 지역신문, 유튜브 산행 영상과 블로그 글을 게시일·출처와 함께 확인하세요. 교통·단풍 안내로 이어집니다.'
 category: travel
 date: '2026-10-05'
-updated: '2026-11-07'
+updated: '2026-11-08'
 tags:
   - 설악산
   - 국립공원
@@ -15,7 +15,7 @@ aiGenerated: false
 reviewed: false
 reviewMethod: source-feed
 ---
-설악산 여행 전에 확인할 공지, 신문 소식, 산행 영상과 블로그 글의 원문을 모았습니다. **2026-11-07 수집 기준**입니다. 제목과 게시일을 안내하며, 기사·영상 본문을 전재하거나 영상 속 장면을 현재 상황으로 단정하지 않습니다.
+설악산 여행 전에 확인할 공지, 신문 소식, 산행 영상과 블로그 글의 원문을 모았습니다. **2026-11-08 수집 기준**입니다. 제목과 게시일을 안내하며, 기사·영상 본문을 전재하거나 영상 속 장면을 현재 상황으로 단정하지 않습니다.
 
 [설악산 특집 한눈에 보기](/seoraksan) · [교통편 정리](/seoraksan-transport-guide) · [단풍·코스 안내](/seoraksan-autumn-guide)
 
@@ -35,7 +35,7 @@ reviewMethod: source-feed
 
 ## 신문·지역 소식
 
-- 2026-11-07 · [‘입동’인 오늘 설악산 -9도… 내륙 일부서 올가을 첫얼음 관측](https://www.kado.net/news/articleView.html?idxno=2083174) — 강원도민일보
+- 2026-11-08 · [인제 백담계곡 도보 전용 탐방길 열렸다](https://www.kado.net/news/articleView.html?idxno=2083226) — 강원도민일보
 
 ## 최근 유튜브 산행 영상
 
@@ -46,7 +46,6 @@ reviewMethod: source-feed
 - 2026-10-01 · [26.10.1. 설악산 한계산성, 50년 만에 개방!](https://www.youtube.com/shorts/zl-ikM9G1GA) — 국립공원TV
 - 2026-09-25 · [설악산 대청봉 단풍과 운해](https://www.youtube.com/shorts/4qpt9OxPKk0) — 산타유 Santayou
 - 2026-09-24 · [설악산 단풍 현황9월23일ㅣ대청봉은 절정, 봉정암까지 내려왔다ㅣ오색→대청봉→봉정암→백담사](https://www.youtube.com/watch?v=-IAS4f_N9Aw) — 산다송tv
-- 2026-09-23 · [설악산 역대급 단풍과 운해/끝청.대청봉에 단풍 초절정/2026.09.22](https://www.youtube.com/watch?v=wctnB3Zv-YQ) — 산타유 Santayou
 
 ## 블로그 탐방 기록
 
