@@ -3,7 +3,7 @@ title: '설악산 최근 소식 모음, 공식 공지·유튜브·블로그'
 description: '설악산국립공원 공지, 지역신문, 유튜브 산행 영상과 블로그 글을 게시일·출처와 함께 확인하세요. 교통·단풍 안내로 이어집니다.'
 category: travel
 date: '2026-10-05'
-updated: '2026-11-09'
+updated: '2026-11-10'
 tags:
   - 설악산
   - 국립공원
@@ -15,11 +15,11 @@ aiGenerated: false
 reviewed: false
 reviewMethod: source-feed
 ---
-설악산 여행 전에 확인할 공지, 신문 소식, 산행 영상과 블로그 글의 원문을 모았습니다. **2026-11-09 수집 기준**입니다. 제목과 게시일을 안내하며, 기사·영상 본문을 전재하거나 영상 속 장면을 현재 상황으로 단정하지 않습니다.
+설악산 여행 전에 확인할 공지, 신문 소식, 산행 영상과 블로그 글의 원문을 모았습니다. **2026-11-10 수집 기준**입니다. 제목과 게시일을 안내하며, 기사·영상 본문을 전재하거나 영상 속 장면을 현재 상황으로 단정하지 않습니다.
 
 [설악산 특집 한눈에 보기](/seoraksan) · [교통편 정리](/seoraksan-transport-guide) · [단풍·코스 안내](/seoraksan-autumn-guide)
 
-일부 출처(sandasong)는 이번 수집에 실패했습니다. 해당 자료는 마지막 성공 때 저장한 목록이며 최신 여부를 원문에서 확인하세요.
+일부 출처(knps-tv, santayou, sandasong)는 이번 수집에 실패했습니다. 해당 자료는 마지막 성공 때 저장한 목록이며 최신 여부를 원문에서 확인하세요.
 
 ## 공식 공지·기상 소식
 
@@ -35,7 +35,7 @@ reviewMethod: source-feed
 
 ## 신문·지역 소식
 
-- 2026-11-09 · [설악로터리클럽, 새솔지역아동센터 아이들에게 즐거운 하루 선물 눈길](https://www.kado.net/news/articleView.html?idxno=2083513) — 강원도민일보
+- 2026-11-10 · [속초시 재향군인회, 설악산 정고평서 제30회 추모제 개최](https://www.kado.net/news/articleView.html?idxno=2083846) — 강원도민일보
 
 ## 최근 유튜브 산행 영상
 
@@ -46,7 +46,6 @@ reviewMethod: source-feed
 - 2026-10-07 · [설악산 공룡능선 단풍](https://www.youtube.com/shorts/rmzq9HJlE1c) — 산타유 Santayou
 - 2026-10-04 · [설악산 단풍 현황10월3일ㅣ봉정암은 절정, 구곡담·천불동계곡까지 내려왔다ㅣ백담사→봉정암→소청→희운각→소공원](https://www.youtube.com/watch?v=JSiH96MfFNI) — 산다송tv
 - 2026-10-04 · [설악산 가을단풍 보세요/봉정암.공룡능선 단풍절정/2026.10.02](https://www.youtube.com/watch?v=zQbRkAYbjCk) — 산타유 Santayou
-- 2026-09-25 · [설악산 대청봉 단풍과 운해](https://www.youtube.com/shorts/4qpt9OxPKk0) — 산타유 Santayou
 
 ## 블로그 탐방 기록
 
