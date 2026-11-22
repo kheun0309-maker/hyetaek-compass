@@ -3,7 +3,7 @@ title: '설악산 최근 소식 모음, 공식 공지·유튜브·블로그'
 description: '설악산국립공원 공지, 지역신문, 유튜브 산행 영상과 블로그 글을 게시일·출처와 함께 확인하세요. 교통·단풍 안내로 이어집니다.'
 category: travel
 date: '2026-10-05'
-updated: '2026-11-21'
+updated: '2026-11-22'
 tags:
   - 설악산
   - 국립공원
@@ -15,7 +15,7 @@ aiGenerated: false
 reviewed: false
 reviewMethod: source-feed
 ---
-설악산 여행 전에 확인할 공지, 신문 소식, 산행 영상과 블로그 글의 원문을 모았습니다. **2026-11-21 수집 기준**입니다. 제목과 게시일을 안내하며, 기사·영상 본문을 전재하거나 영상 속 장면을 현재 상황으로 단정하지 않습니다.
+설악산 여행 전에 확인할 공지, 신문 소식, 산행 영상과 블로그 글의 원문을 모았습니다. **2026-11-22 수집 기준**입니다. 제목과 게시일을 안내하며, 기사·영상 본문을 전재하거나 영상 속 장면을 현재 상황으로 단정하지 않습니다.
 
 [설악산 특집 한눈에 보기](/seoraksan) · [교통편 정리](/seoraksan-transport-guide) · [단풍·코스 안내](/seoraksan-autumn-guide)
 
@@ -40,7 +40,6 @@ reviewMethod: source-feed
 - 2026-10-20 · [설악산 운해는 대청봉/단풍은 수렴동대피소.영시암.백담사 /2026.10.17](https://www.youtube.com/watch?v=NPtFavQX6RQ) — 산타유 Santayou
 - 2026-10-18 · [설악산 단풍 현황10월17일ㅣ2026시즌 마지막 단풍 최절정ㅣ봉정암 1박하고, 대청봉 다녀오기](https://www.youtube.com/watch?v=8Izc-h7ke4w) — 산다송tv
 - 2026-10-08 · [설악산 봉정암 단풍](https://www.youtube.com/shorts/Jh98kZTVpiI) — 산타유 Santayou
-- 2026-10-07 · [설악산 공룡능선 단풍](https://www.youtube.com/shorts/rmzq9HJlE1c) — 산타유 Santayou
 
 ## 블로그 탐방 기록
 
