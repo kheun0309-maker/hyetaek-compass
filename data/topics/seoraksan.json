@@ -1,7 +1,15 @@
 {
   "topic": "seoraksan",
-  "collectedAt": "2026-11-23T07:40:07.962Z",
+  "collectedAt": "2026-11-24T09:55:21.002Z",
   "items": [
+    {
+      "title": "[설악산] 맞춤형 일일 기상정보 만족도 조사 설문 참여자 경품 추첨 결과 알림",
+      "url": "https://www.knps.or.kr/front/portal/open/pnewsDtl.do?menuNo=8000517&pnewsId=PNEWSM035541&searchParkId=120400&pnewsGrpCd=PNE01",
+      "publishedAt": "2026-11-24",
+      "sourceId": "knps",
+      "sourceName": "설악산국립공원",
+      "kind": "official"
+    },
     {
       "title": "[설악산국립공원] 누구나 부담없이 즐길 수 있는 설악산 신규 코스 - 한계산성 탐방로",
       "url": "https://blog.naver.com/iloveknp/224483346616",
@@ -75,14 +83,6 @@
       "kind": "blog"
     },
     {
-      "title": "[설악산] 2026년 가을철 설악산국립공원 탐방로 출입통제 공고",
-      "url": "https://www.knps.or.kr/front/portal/open/pnewsDtl.do?menuNo=8000517&pnewsId=PNEWSM035275&searchParkId=120400&pnewsGrpCd=PNE01",
-      "publishedAt": "2026-10-30",
-      "sourceId": "knps",
-      "sourceName": "설악산국립공원",
-      "kind": "official"
-    },
-    {
       "title": "설악산 운해는 대청봉/단풍은 수렴동대피소.영시암.백담사 /2026.10.17",
       "url": "https://www.youtube.com/watch?v=NPtFavQX6RQ",
       "publishedAt": "2026-10-20",
@@ -111,50 +111,50 @@
     {
       "sourceId": "knps",
       "status": "ok",
-      "attemptedAt": "2026-11-23T07:40:07.962Z",
-      "checkedAt": "2026-11-23T07:40:07.962Z",
+      "attemptedAt": "2026-11-24T09:55:21.002Z",
+      "checkedAt": "2026-11-24T09:55:21.002Z",
       "count": 8
     },
     {
       "sourceId": "kma",
       "status": "ok",
-      "attemptedAt": "2026-11-23T07:40:07.962Z",
-      "checkedAt": "2026-11-23T07:40:07.962Z",
+      "attemptedAt": "2026-11-24T09:55:21.002Z",
+      "checkedAt": "2026-11-24T09:55:21.002Z",
       "count": 0
     },
     {
       "sourceId": "kado",
       "status": "ok",
-      "attemptedAt": "2026-11-23T07:40:07.962Z",
-      "checkedAt": "2026-11-23T07:40:07.962Z",
+      "attemptedAt": "2026-11-24T09:55:21.002Z",
+      "checkedAt": "2026-11-24T09:55:21.002Z",
       "count": 0
     },
     {
       "sourceId": "knps-blog",
       "status": "ok",
-      "attemptedAt": "2026-11-23T07:40:07.962Z",
-      "checkedAt": "2026-11-23T07:40:07.962Z",
+      "attemptedAt": "2026-11-24T09:55:21.002Z",
+      "checkedAt": "2026-11-24T09:55:21.002Z",
       "count": 3
     },
     {
       "sourceId": "knps-tv",
       "status": "ok",
-      "attemptedAt": "2026-11-23T07:40:07.962Z",
-      "checkedAt": "2026-11-23T07:40:07.962Z",
+      "attemptedAt": "2026-11-24T09:55:21.002Z",
+      "checkedAt": "2026-11-24T09:55:21.002Z",
       "count": 0
     },
     {
       "sourceId": "santayou",
       "status": "ok",
-      "attemptedAt": "2026-11-23T07:40:07.962Z",
-      "checkedAt": "2026-11-23T07:40:07.962Z",
+      "attemptedAt": "2026-11-24T09:55:21.002Z",
+      "checkedAt": "2026-11-24T09:55:21.002Z",
       "count": 1
     },
     {
       "sourceId": "sandasong",
       "status": "ok",
-      "attemptedAt": "2026-11-23T07:40:07.962Z",
-      "checkedAt": "2026-11-23T07:40:07.962Z",
+      "attemptedAt": "2026-11-24T09:55:21.002Z",
+      "checkedAt": "2026-11-24T09:55:21.002Z",
       "count": 1
     }
   ]
