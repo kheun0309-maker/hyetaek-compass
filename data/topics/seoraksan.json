@@ -1,6 +1,6 @@
 {
   "topic": "seoraksan",
-  "collectedAt": "2026-11-24T09:55:21.002Z",
+  "collectedAt": "2026-11-25T08:35:03.441Z",
   "items": [
     {
       "title": "[설악산] 맞춤형 일일 기상정보 만족도 조사 설문 참여자 경품 추첨 결과 알림",
@@ -111,50 +111,50 @@
     {
       "sourceId": "knps",
       "status": "ok",
-      "attemptedAt": "2026-11-24T09:55:21.002Z",
-      "checkedAt": "2026-11-24T09:55:21.002Z",
+      "attemptedAt": "2026-11-25T08:35:03.441Z",
+      "checkedAt": "2026-11-25T08:35:03.441Z",
       "count": 8
     },
     {
       "sourceId": "kma",
       "status": "ok",
-      "attemptedAt": "2026-11-24T09:55:21.002Z",
-      "checkedAt": "2026-11-24T09:55:21.002Z",
+      "attemptedAt": "2026-11-25T08:35:03.441Z",
+      "checkedAt": "2026-11-25T08:35:03.441Z",
       "count": 0
     },
     {
       "sourceId": "kado",
       "status": "ok",
-      "attemptedAt": "2026-11-24T09:55:21.002Z",
-      "checkedAt": "2026-11-24T09:55:21.002Z",
+      "attemptedAt": "2026-11-25T08:35:03.441Z",
+      "checkedAt": "2026-11-25T08:35:03.441Z",
       "count": 0
     },
     {
       "sourceId": "knps-blog",
       "status": "ok",
-      "attemptedAt": "2026-11-24T09:55:21.002Z",
-      "checkedAt": "2026-11-24T09:55:21.002Z",
+      "attemptedAt": "2026-11-25T08:35:03.441Z",
+      "checkedAt": "2026-11-25T08:35:03.441Z",
       "count": 3
     },
     {
       "sourceId": "knps-tv",
       "status": "ok",
-      "attemptedAt": "2026-11-24T09:55:21.002Z",
-      "checkedAt": "2026-11-24T09:55:21.002Z",
+      "attemptedAt": "2026-11-25T08:35:03.441Z",
+      "checkedAt": "2026-11-25T08:35:03.441Z",
       "count": 0
     },
     {
       "sourceId": "santayou",
       "status": "ok",
-      "attemptedAt": "2026-11-24T09:55:21.002Z",
-      "checkedAt": "2026-11-24T09:55:21.002Z",
+      "attemptedAt": "2026-11-25T08:35:03.441Z",
+      "checkedAt": "2026-11-25T08:35:03.441Z",
       "count": 1
     },
     {
       "sourceId": "sandasong",
       "status": "ok",
-      "attemptedAt": "2026-11-24T09:55:21.002Z",
-      "checkedAt": "2026-11-24T09:55:21.002Z",
+      "attemptedAt": "2026-11-25T08:35:03.441Z",
+      "checkedAt": "2026-11-25T08:35:03.441Z",
       "count": 1
     }
   ]
