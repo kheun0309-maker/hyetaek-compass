@@ -3,7 +3,7 @@ title: '설악산 최근 소식 모음, 공식 공지·유튜브·블로그'
 description: '설악산국립공원 공지, 지역신문, 유튜브 산행 영상과 블로그 글을 게시일·출처와 함께 확인하세요. 교통·단풍 안내로 이어집니다.'
 category: travel
 date: '2026-10-05'
-updated: '2026-11-25'
+updated: '2026-11-26'
 tags:
   - 설악산
   - 국립공원
@@ -15,18 +15,18 @@ aiGenerated: false
 reviewed: false
 reviewMethod: source-feed
 ---
-설악산 여행 전에 확인할 공지, 신문 소식, 산행 영상과 블로그 글의 원문을 모았습니다. **2026-11-25 수집 기준**입니다. 제목과 게시일을 안내하며, 기사·영상 본문을 전재하거나 영상 속 장면을 현재 상황으로 단정하지 않습니다.
+설악산 여행 전에 확인할 공지, 신문 소식, 산행 영상과 블로그 글의 원문을 모았습니다. **2026-11-26 수집 기준**입니다. 제목과 게시일을 안내하며, 기사·영상 본문을 전재하거나 영상 속 장면을 현재 상황으로 단정하지 않습니다.
 
 [설악산 특집 한눈에 보기](/seoraksan) · [교통편 정리](/seoraksan-transport-guide) · [단풍·코스 안내](/seoraksan-autumn-guide)
 
 ## 공식 공지·기상 소식
 
+- 2026-11-26 · [설악산 11. 26. 일일 산행 기상정보](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002257) — 설악산국립공원
 - 2026-11-24 · [설악산 맞춤형 일일 기상정보 만족도 조사 설문 참여자 경품 추첨 결과 알림](https://www.knps.or.kr/front/portal/open/pnewsDtl.do?menuNo=8000517&pnewsId=PNEWSM035541&searchParkId=120400&pnewsGrpCd=PNE01) — 설악산국립공원
 - 2026-11-23 · [설악산 11. 23. 일일 산행 기상정보](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002248) — 설악산국립공원
 - 2026-11-20 · [설악산 11. 20. 일일 산행 기상정보](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002245) — 설악산국립공원
 - 2026-11-19 · [설악산 11. 19. 일일 산행 기상정보](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002244) — 설악산국립공원
 - 2026-11-18 · [설악산 11. 18. 일일 산행 기상정보](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002243) — 설악산국립공원
-- 2026-11-17 · [설악산 11. 17. 일일 산행 기상정보](https://www.knps.or.kr/front/portal/visit/visitCourseSubMain.do?menuNo=7020091&parkNavGb=epil_viewNews&parkId=120400&vnewsId=VNEWSM002242) — 설악산국립공원
 - 2026-11-06 · [설악산 자생식물증식장 CCTV 설치 행정예고](https://www.knps.or.kr/front/portal/open/pnewsDtl.do?menuNo=8000517&pnewsId=PNEWSM035366&searchParkId=120400&pnewsGrpCd=PNE01) — 설악산국립공원
 - 2026-11-06 · [설악산 일일 기상정보 이용 만족도 설문조사 안내](https://www.knps.or.kr/front/portal/open/pnewsDtl.do?menuNo=8000517&pnewsId=PNEWSM035367&searchParkId=120400&pnewsGrpCd=PNE01) — 설악산국립공원
 
